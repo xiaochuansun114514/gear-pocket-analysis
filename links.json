@@ -1,0 +1,58 @@
+{
+  "config_url": "https://raw.gitcode.com/RJKD/RJKD2/raw/main/XL1",
+  "config_sha": "eacdc6509b7bf746eb7b0d2ca4e0e6e50d037d63",
+  "config_encryption": "hex -> AES (密钥藏于盈安壳 abcdstr 8242/8243/8244, 运行时物化)",
+  "lanzou_folders": [
+    "https://wwasl.lanzoul.com/b01bjff59c",
+    "https://wwasl.lanzoul.com/b01bjff5ad",
+    "https://wwasl.lanzoul.com/b01bjff5be",
+    "https://wwasl.lanzoul.com/b01bjkow4d",
+    "https://wwasl.lanzoul.com/b01bjmzm5c",
+    "https://wwasl.lanzoul.com/b01bjmzrjg",
+    "https://wwasb.lanzoul.com/b01bjfkdcd",
+    "https://wwasb.lanzoux.com/b01bjfkdab",
+    "https://wwasb.lanzoux.com/b01bjfkdbc",
+    "https://wwasl.lanzoum.com/b01bjff50d"
+  ],
+  "official_sites": [
+    "http://rjkd.top/fxkd",
+    "https://rjkd.top/bdwt/",
+    "https://rjkd.top/kdjs/",
+    "https://rjkd.top/rjwt/",
+    "https://rjkd.top/swhz/",
+    "https://rjkd.top/yjdz1/",
+    "https://rjkd.app/2/1/",
+    "https://rjkd.app/2/2",
+    "https://rjkd.app/2/3/",
+    "https://t.me/rjkd666"
+  ],
+  "lanzou_proxy_api": [
+    "https://api.ilanzou.com/unproved/pd/url?id=13518563&time=1789376596&token=207d2f9db746f7b3378c65ede3d6b806&type=2",
+    "https://api.ilanzou.com/unproved/pd/url?id=13518564&time=1789376597&token=c515f4edd622747ad9965e390ce6739e&type=2",
+    "https://api.ilanzou.com/unproved/pd/url?id=13764473&time=1789376597&token=6c57828f1d349ce724049913c74cfc42&type=2",
+    "https://api.ilanzou.com/unproved/pd/url?id=13871682&time=1789376596&token=ff3b25c7da94f148162e029f04a91d6d&type=2",
+    "https://api.ilanzou.com/unproved/pd/url?id=13871876&time=1789376597&token=b4ff9af6ac8a3afa678dd6039e1a2509&type=2"
+  ],
+  "image_cdn": [
+    "https://cdn.imgos.cn/",
+    "https://img.meituan.net/",
+    "https://image.woozooo.com/"
+  ],
+  "vpn_nav_config": [
+    {"标题": "须知", "链接": "https://wwasl.lanzoum.com/b01bjff50d"},
+    {"标题": "Telegram", "链接": "https://telegram.org"},
+    {"标题": "X-推特", "链接": "https://x.com"},
+    {"标题": "AfreecaTV", "链接": "https://www.sooplive.co.kr"},
+    {"标题": "TikTok", "链接": "https://www.tiktok.com"},
+    {"标题": "Toutube", "链接": "https://youtube.com"},
+    {"标题": "lnstagram", "链接": "https://Instagram.com"},
+    {"标题": "Facebook", "链接": "https://m.facebook.com"},
+    {"标题": "潮人SM交流论坛", "链接": "https://piss.crtslta.com/"},
+    {"标题": "潮人SM交流国际版", "链接": "https://bbs.crtslt.com/"},
+    {"标题": "Potato", "链接": "https://m.potato.im"},
+    {"标题": "Fyptt", "链接": "https://fyptt.to/"},
+    {"标题": "中文成人小说网", "链接": "https://www.xbookcn.net"},
+    {"标题": "BCC美国新闻网", "链接": "https://www.bbc.com/zhongwen/simp"},
+    {"标题": "ChatGPT", "链接": "https://chatgpt.com/"}
+  ]
+}
