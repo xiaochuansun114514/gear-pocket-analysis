@@ -1,0 +1,225 @@
+<View id="19" did="0" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="18" did="19" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+visibility=0
+gravity=center
+background=#80000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="20" did="18" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+background=white
+gravity=center
+layout_marginleft=30dp
+layout_marginright=30dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="21" did="20" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=温馨提示
+textcolor=#000000
+layout_margintop=20dp
+layout_marginbottom=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="22" did="20" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=本软件制作不易
+textcolor=#000000
+gravity=center
+layout_marginleft=5dp
+layout_marginright=5dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="32" did="20" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=你需要完成分享到100人以上群的任务15次
+textcolor=#000000
+gravity=center
+layout_marginleft=5dp
+layout_marginright=5dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="33" did="20" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=才可开始使用，而且不能分享至一样的群
+textcolor=#000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="29" did="20" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="23" did="29" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=你已经分享：
+textcolor=#000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="30" did="29" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=0
+textcolor=#fff40000
+</ppt>
+<event>
+</event>
+</View>
+<View id="31" did="29" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=个群，赶快去分享吧！
+textcolor=#000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="24" did="20" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_margintop=20dp
+layout_marginbottom=15dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>
+width=-1
+height=30dp
+orientation=vertical
+gravity=center
+layout_weight=1
+layout_marginleft=20dp
+layout_marginright=10dp
+</ppt>
+<event>
+<eventItme type="clicki">
+us(分享.19,"visibility","gone")
+</eventItme>
+</event>
+</View>
+<View id="27" did="25" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=取消
+textcolor=#ffffff
+</ppt>
+<event>
+</event>
+</View>
+<View id="26" did="24" type="LinearLayout">
+<ppt>
+width=-1
+height=30dp
+orientation=vertical
+gravity=center
+layout_weight=1
+layout_marginleft=10dp
+layout_marginright=20dp
+</ppt>
+<event>
+<eventItme type="clicki">
+sss ft=0
+fn fx.goto()
+</eventItme>
+</event>
+</View>
+<View id="28" did="26" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=分享
+textcolor=#ffffff
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="restart">
+f(sss.dj==1)
+{
+sss dj=null
+fr(sss.lj2,a)
+fr(sss.lj1,f)
+syso(sss.lj1)
+f(f=="1")
+{
+s(a+1,b)
+fw(sss.lj2,b)
+fd(sss.lj1,f)
+s c="你已经分享："
+s d=" 个群"
+ss("(html)"+c+"&lt;font color="#FA0000"&gt;"+b+"&lt;/font&gt;"+d,cc)
+us(23,"text",cc)
+s(sss.fxcs-1,fxcs)
+f(a&gt;=fxcs)
+{
+us(28,"text","进入软件")
+ssj(26,"clicki")
+{
+end()
+uigo(sss.tzjm)
+}
+}
+else
+{
+}
+}
+else
+{
+tw("取消分享或者分享同一个群是没用的哦！")
+}
+}
+else
+{
+}
+</eventItme>
+</UIEventset>
+�k:W��

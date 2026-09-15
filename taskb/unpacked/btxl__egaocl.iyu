@@ -1,0 +1,279 @@
+<View id="4" did="0" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+app_CardElevation=8dp
+app_CardcornerRadius=15dp
+layout_margin=10dp
+layout_marginBottom=50dp
+layout_margintop=38dp
+layout_marginleft=6dp
+layout_gravity=bottom
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="4" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=bottom
+layout_gravity=bottom
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=50dp
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=发现新版本
+textColor=#000000
+textSize=18sp
+typeface=sans
+</ppt>
+<event>
+</event>
+</View>
+<View id="9" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=1.5dp
+orientation=vertical
+background=#20000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="10" did="6" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=冰糖雪梨已更新！该版本已失效（您可以不用继续分享了，新版本无需再完成分享任务，新版本会记录你完成任务的次数）
+textColor=#000000
+textSize=15sp
+typeface=monospace
+textStyle=bold
+layout_marginLeft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="20" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+orientation=vertical
+layout_marginLeft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="24" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=horizontal
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="26" did="25" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=38dp
+layout_margin=10dp
+app_CardcornerRadius=19dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="27" did="26" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+background=#30000000
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="33" did="27" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+layout_margin=1dp
+app_CardcornerRadius=18dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="34" did="33" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+<eventItme type="press">
+</eventItme>
+<eventItme type="clicki">
+java(null,ss.utwv,"android.app.Dialog.dismiss")
+</eventItme>
+</event>
+</View>
+<View id="28" did="34" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=以后再说
+textColor=#ffff75a0
+textSize=15sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="29" did="24" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="30" did="29" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=38dp
+layout_margin=10dp
+app_CardcornerRadius=19dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="31" did="30" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+background=#ffff78ab
+gravity=center
+</ppt>
+<event>
+<eventItme type="clicki">
+hws("https://www.123pan.com/s/4m9Tjv-iPf4.html")
+end("egaocl.iyu")
+</eventItme>
+</event>
+</View>
+<View id="32" did="31" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=前往下载
+textColor=#FFFFFF
+textSize=15sp
+typeface=monospace
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+uycl("#000000",false,0)
+sss j =true
+f(sss.j==true)
+{
+t()
+{
+ufnsui()
+{
+swh("pxh",huj)
+us(4,"visibility","visible")
+dht(scf,0,0,huj,0)
+dh(scf,"duration",500)
+us(4,"dh",scf)
+}
+stop(200)
+ufnsui()
+{
+t()
+{
+dha(dh, false, true)
+dh(dh, "duration", 300)
+ufnsui()
+{
+us(2,"visibility",0)
+us(2, "dh", dh)
+sss j =false
+}
+}
+}
+}
+}
+</eventItme>
+</UIEventset>
+����|L

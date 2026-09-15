@@ -1,0 +1,98 @@
+fn o(x)
+ss("你还未完成分享任务，暂不可"+x,n)
+tw(n)
+end fn
+fn go()
+us(分享.19,"visibility",0)
+us(分享.30,"text",sss.ts)
+end fn
+fn goto()
+s ts=10
+s yu="[有人@我]还在为PUBGM3.0找不到稳定科技而发愁吗？\n791426562点开群号码看群介绍，进群点击群公告、群文件随便你拿\n群号：791426562\n备用群号：673110655\n电报@UNISHUAMP本消息由软件推送，如有打扰请管理员撤回"
+fw("%.yy",yu)
+s a = "%.yy"
+fr(a, c)
+sit(a, "action", "android.intent.action.SEND")
+sit(a, "type", "text/plain")
+sit(a,"classname","com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity")
+sit(a, "extra", "android.intent.extra.TEXT",c)
+uit(a, "chooser", "分享")
+fd("%.end",c)
+sss qt=false
+sss fs=true
+end fn
+fn start()
+fd("%.end",c)
+f(sss.fs)
+{
+sss fs =false
+t()
+{
+stop(4000)
+f(sss.qt)
+{
+endcode
+}
+ufnsui()
+{
+sran(1,2,sa)
+sran(1,3,sb)
+f(sa==1||sb==3)
+{
+fw("%.end",1)
+sss qt=true
+}
+}
+}
+}
+end fn
+fn sc()
+fr("%.end",js)
+f(sss.ts&gt;=14)
+{
+s iyu ="egaocl.iyu"
+s bln ="true"
+javanew(ss.utwv,"androidx.appcompat.app.AppCompatDialog","Context",activity)
+nvw(111,998,"相对布局","width=-1\nheight=-1",ss.载体)
+addv(ss.载体,iyu)
+java(null,ss.utwv,"android.app.Dialog.setContentView","android.view.View",ss.载体)
+java(hq,ss.utwv,"android.app.Dialog.getWindow")
+java(null,hq,"android.view.Window.setBackgroundDrawableResource","int",17170445)
+java(null,ss.utwv,"android.app.Dialog.setCancelable","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setCanceledOnTouchOutside","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setOnDismissListener",".android.content.DialogInterface$OnDismissListener",null)
+{
+}
+java(null,ss.utwv,"android.app.Dialog.show")
+}
+syso(js)
+f(js==1)
+{
+s+(1,sss.ts)
+fd("%.end",c)
+sss qt=true
+}
+else
+{
+sran(1,4,cho)
+s t="请不要分享太快"
+f(cho==2)
+{
+s t="取消分享或分享到同一个群是没用的哦"
+s cho=0
+}
+f(cho==3||sss.ts==0)
+{
+s+(1,sss.ts)
+fd("%.end",c)
+us(分享.30,"text",sss.ts)
+sss qt=true
+endcode
+}
+tw(t)
+sss qt=false
+}
+fd("%.end",c)
+us(分享.30,"text",sss.ts)
+end fn
+6�+��W
