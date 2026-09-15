@@ -3,6 +3,12 @@
 iapp3 (.iyu) script decryption for com.huage.egaocl  --  VERIFIED
 Fully reverses assets/lib.so (36896 bytes) -> iapp project bundle -> mian.iyu
 
+这是我最早写的那版，只解齿轮辅助一个应用，目的是先把算法跑通。
+后来发现另外两款用的是同一套引擎，就抽了个通用版放到 dec_all.py，那个能一次解三个。
+
+下面这段符号表是整个任务的转折点 —— 当时没急着啃汇编，
+先 readelf -s 翻了一眼 libygsiyu.so，看见函数名全在，一下子就省了好几天的功夫：
+
 Native logic recovered from libygsiyu.so (iapp engine, ARM32, full symtab):
   iapp::mete::slky(Interact*,jbyteArray,jbyteArray)  @0x8ccc   keyed MD5 scramble
   iapp::mete::slky(Interact*,string,string)          @0x9440   same, string args

@@ -2,9 +2,14 @@
 # -*- coding: utf-8 -*-
 # decrypt_src.py — 齿轮辅助(com.huage.egaocl) beingyi 壳 src/ 文件解密器
 #
-# 核心发现：beingyi(别疑惑) SubApp 壳把真实 dex 以「XOR 流」加密后放在 APK 的 src/ 目录，
-# 文件名是 md5 风格随机串。密钥 = 包名 "com.huage.egaocl"（循环 XOR）。
-# 外层还有 360 加固(libjiagu.so) + 云注入(armadillo)。
+# 当时 jadx 打不开 src/ 下这三个文件，直接报 "not a valid dex"，
+# 那说明是被加密了，不是文件坏了。看了眼三个文件的开头 8 字节，完全一样：
+#     07 0a 15 24 58 46 54 67
+# 既然解密后都是 dex，开头就该是 "dex\n035\0"，拿魔数跟密文头逐字节异或一下，
+# 出来正好是 "com.huag" —— 密钥就是包名，循环 XOR 一遍就完了。
+#
+# 外面还套着 360 加固(libjiagu.so) 和云注入(armadillo)，
+# 但这一层是纯 Java + 自定义 XOR，四层壳里它最软，从这儿下手最省事。
 #
 # 用法: python decrypt_src.py <apk路径> <输出目录>
 import sys, os, zipfile

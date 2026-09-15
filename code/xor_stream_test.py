@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
-# xor_stream_test.py — 验证 XL1 配置是否用字符串常量的 XOR 流算法加密
-# 结论：前两字节可解出 "[{", 但第三字节起乱码 -> 配置不是 XOR 流, 而是 AES
+# xor_stream_test.py — 试试 XL1 是不是也用字符串常量那套 XOR 流加密的
+#
+# 当时刚把壳的字符串解密算法还原出来，就想着配置文件会不会是同一个套路，
+# 于是 salt 和 key 各从 0 试到 255，六万多种组合全跑了一遍。
+#
+# 结果：只有前两个字节能解出 "[{"（因为 JSON 开头固定，是被硬凑出来的），
+# 从第三个字节起全是乱码。也就是说 XL1 根本不是 XOR 流。
+# 这次白跑不算亏 —— 正是它把 AES 这个方向给逼出来了。
 import binascii
 
 def hex_decode(data: bytes) -> bytes:

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>永久地址</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main class="page">
+    <article class="sheet" aria-label="永久地址">
+      <section class="box">
+        <h1>防止以后找不到【软件口袋】</h1>
+        <p>一定要把下面的【下载地址】和【官网地址】全部收藏起来！</p>
+        <p>可以收藏在 QQ 或者微信里面，这样可以防止丢失。</p>
+      </section>
+
+      <section class="box tall">
+        <h2>【软件口袋】下载地址</h2>
+        <div class="url-list" id="downloadLinks">
+          <span class="url-item">https://wwasb.lanzoum.com/b01bjn5kcd</span>
+          <span class="url-item">https://wwasb.lanzoum.com/b01bjn5kfg</span>
+          <span class="url-item">https://wwasb.lanzoum.com/b01bjn5khi</span>
+       
+        </div>
+        <p>复制任意一个网址到浏览器打开即可。</p>
+        <div class="copy-area">
+          <button class="copy-button" type="button" data-copy-target="downloadLinks">一键复制下载地址</button>
+        </div>
+      </section>
+
+      <section class="box tall">
+        <h2>【软件口袋】官网地址</h2>
+        <div class="url-list" id="siteLinks">
+          <span class="url-item">rjkd.cc</span>
+          <span class="url-item">rjkd.top</span>
+       <span class="url-item">rjkd.app</span>
+        </div>
+        <p>复制任意一个网址到浏览器打开即可。</p>
+        <div class="copy-area">
+          <button class="copy-button" type="button" data-copy-target="siteLinks">一键复制官网地址</button>
+        </div>
+      </section>
+
+      <section class="box danger">
+        <p>如果手机默认浏览器无法打开，请使用【X浏览器】或者【Via浏览器】。</p>
+        <p>手机应用商店都可以下载。如果还打不开，请换网址尝试，或者尝试开启科学上网后打开。</p>
+      </section>
+
+      <section class="box">
+        <h2>【如何收藏到微信】</h2>
+      </section>
+
+      <div class="media-frame phone">
+        <img class="media-image" src="../assets/yjdz-wechat.webp" alt="如何收藏到微信教程截图" loading="lazy" decoding="async">
+      </div>
+
+      <section class="box">
+        <h2>【如何收藏到 QQ】</h2>
+      </section>
+
+      <div class="media-frame phone">
+        <img class="media-image" src="../assets/yjdz-qq.webp" alt="如何收藏到 QQ 教程截图" loading="lazy" decoding="async">
+      </div>
+
+      <section class="box tall">
+        <h2>【教程】到此结束</h2>
+        <p>大家把永久地址（1）保存好后，一定要再去保存永久地址（2）。</p>
+        <p>因为永久地址（2）才是真正的永久保存，永远不会丢失。</p>
+        <p>不然以后没地方下载软件口袋，花钱都可能没地方下载。只能提醒到这里了！</p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    document.querySelectorAll('[data-copy-target]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var target = document.getElementById(button.getAttribute('data-copy-target'));
+        var text = Array.from(target.querySelectorAll('.url-item')).map(function (item) {
+          return item.textContent.trim();
+        }).join('\n');
+
+        navigator.clipboard.writeText(text).then(function () {
+          var oldText = button.textContent;
+          button.textContent = '复制成功';
+          setTimeout(function () {
+            button.textContent = oldText;
+          }, 1400);
+        }).catch(function () {
+          button.textContent = '请长按网址手动复制';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

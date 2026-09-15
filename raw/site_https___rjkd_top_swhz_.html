@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商务合作</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main class="page">
+    <article class="sheet" aria-label="商务合作">
+      
+      <form class="form-card" method="post" action="">
+        <h1 class="form-title">商务合作</h1>
+        <p class="form-intro">请填写以下信息，我们会尽快与你联系。</p>
+
+        <div class="field">
+          <span class="field-label">合作类型</span>
+          <div class="type-options">
+                          <label class="type-option">
+                <input type="radio" name="type" value="广告投放" checked>
+                <span>广告投放</span>
+              </label>
+                          <label class="type-option">
+                <input type="radio" name="type" value="软件推广" >
+                <span>软件推广</span>
+              </label>
+                          <label class="type-option">
+                <input type="radio" name="type" value="加入我们" >
+                <span>加入我们</span>
+              </label>
+                      </div>
+        </div>
+
+        <label class="field">
+          <span class="field-label">合作描述 <span class="required">*</span></span>
+          <textarea class="text-control" name="description" maxlength="300" required placeholder="请详细描述你的合作意向或需求，这将有助于我们更好地了解你。"></textarea>
+          <span class="counter"><span id="descriptionCount">0</span>/300</span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">联系方式 <span class="required">*</span></span>
+          <input class="text-control" type="text" name="contact" value="" required placeholder="请输入你的邮箱或 TG 账号">
+        </label>
+
+        <button class="submit-button" type="submit">提交合作意向</button>
+
+        <p class="form-note">同一设备每天只能提交一次。<br>我们将在 2 个工作日内与你联系，请耐心等待。<br>所有提交信息将严格保密，期待与你的合作。</p>
+      </form>
+    </article>
+  </main>
+
+  <script>
+    var description = document.querySelector('textarea[name="description"]');
+    var count = document.getElementById('descriptionCount');
+    function updateCount() {
+      count.textContent = description.value.length;
+    }
+    description.addEventListener('input', updateCount);
+    updateCount();
+  </script>
+</body>
+</html>

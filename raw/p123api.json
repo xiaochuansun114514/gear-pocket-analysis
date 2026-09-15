@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>123云盘</title>
+    <script>
+      ;(function () {
+        var pathname = window.location.pathname
+        var normalizedPath = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
+        var legacyNoticeDetailMatch = normalizedPath.match(/^\/Notice\/([^/]+)$/i)
+        var redirectPathMatch = pathname.match(/^\/(?:s|ps|123pan)\/([a-z0-9]+-[a-z0-9]+)(?:\/|\.html|$)/i)
+        var rootClassList = document.documentElement.classList
+        var code62 =
+          'Tvd3hHA9QEkom14xpfaBJIMwgFYGPXn2sWCNORDr80KuUSl7bZcetizL5q6yVj'
+        var codeLength = 62
+        var decodeMap = {}
+        var mapIndex
+
+        if (legacyNoticeDetailMatch) {
+          var noticeId = decodeURIComponent(legacyNoticeDetailMatch[1])
+          var params = new URLSearchParams(window.location.search || '')
+
+          if (!params.has('id')) {
+            params.set('id', noticeId)
+          }
+
+          var query = params.toString()
+          rootClassList.add('redirect-hidden')
+          window.location.replace(
+            window.location.origin +
+              '/Notice/' +
+              (query ? '?' + query : '') +
+              (window.location.hash || '')
+          )
+          return
+        }
+
+        function isValidEncodedPart(value) {
+          var i
+
+          if (!value) return false
+          for (i = 0; i < value.length; i += 1) {
+            if (typeof decodeMap[value.charAt(i)] !== 'number') return false
+          }
+          return true
+        }
+
+        function decodeBase62(value) {
+          var result = 0
+          var i
+          var digit
+
+          for (i = 0; i < value.length; i += 1) {
+            digit = decodeMap[value.charAt(i)]
+            if (typeof digit !== 'number') return null
+            result += digit * Math.pow(codeLength, i)
+          }
+
+          if (
+            result <= 0 ||
+            result > 9007199254740991 ||
+            !isFinite(result) ||
+            Math.floor(result) !== result
+          ) {
+            return null
+          }
+          return result
+        }
+
+        function encodeBase62(number) {
+          var result = []
+          var remainder
+
+          while (number > 0) {
+            remainder = number % codeLength
+            result.push(code62.charAt(remainder))
+            number = Math.floor(number / codeLength)
+          }
+          return result.join('')
+        }
+
+        function isMobileDevice() {
+          var navigatorInfo = window.navigator || {}
+          var ua = (navigatorInfo.userAgent || '').toLowerCase()
+          var innerWidth = window.innerWidth || 0
+          var innerHeight = window.innerHeight || 0
+          var innerMin =
+            innerWidth && innerHeight
+              ? Math.min(innerWidth, innerHeight)
+              : 0
+          var screenMin = window.screen
+            ? Math.min(window.screen.width, window.screen.height)
+            : 0
+          var minDimension = innerMin || screenMin
+          var isPhone =
+            /android|iphone|ipod|webos|blackberry|iemobile|opera mini|openharmony|mobile/i.test(
+              ua
+            ) &&
+            !/ipad|tablet|playbook|silk|sm-t\d|nexus 7|nexus 9|nexus 10/i.test(
+              ua
+            ) &&
+            !(/android/.test(ua) && !/mobile/.test(ua))
+
+          return isPhone && minDimension <= 720
+        }
+
+        window.__PAGE_404_STATE__ = {
+          pathname: pathname,
+          pathMatch: redirectPathMatch,
+          shouldRedirect: Boolean(redirectPathMatch),
+        }
+
+        if (redirectPathMatch) {
+          var shareKey
+          var keyParts
+          var uid
+          var deviceHostPart
+          var targetUrl
+
+          for (mapIndex = 0; mapIndex < code62.length; mapIndex += 1) {
+            decodeMap[code62.charAt(mapIndex)] = mapIndex
+          }
+
+          rootClassList.add('redirect-hidden')
+
+          shareKey = redirectPathMatch[1].replace(/\.html$/i, '')
+          keyParts = shareKey.split('-')
+          if (
+            keyParts.length === 2 &&
+            isValidEncodedPart(keyParts[0]) &&
+            isValidEncodedPart(keyParts[1])
+          ) {
+            uid = decodeBase62(keyParts[0])
+            if (uid !== null && encodeBase62(uid) === keyParts[0]) {
+              deviceHostPart = isMobileDevice() ? 'mshare' : 'share'
+              targetUrl =
+                'https://' +
+                uid +
+                '.' +
+                deviceHostPart +
+                '.123pan.cn' +
+                pathname +
+                window.location.search +
+                window.location.hash
+
+              window.location.replace(targetUrl)
+            }
+          }
+
+          return
+        }
+      })()
+    </script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: table;
+        width: 100%;
+        color: #666;
+        font-family: Arial, "Microsoft YaHei", sans-serif;
+        text-align: center;
+      }
+
+      main {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .not-found-content {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .redirect-hidden .not-found-content {
+        display: none;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        color: #333;
+        font-size: 72px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <main class="not-found-content">
+      <h1>404</h1>
+      <p>您访问的页面不存在</p>
+    </main>
+  </body>
+</html>

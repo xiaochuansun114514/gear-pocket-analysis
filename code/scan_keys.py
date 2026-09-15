@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-# scan_keys.py — chunked scan of mem.bin for crypto + URL-path needles, print context
+# scan_keys.py — 分块扫 mem.bin，找加密特征和 URL 关键词，命中就把上下文打出来
+#
+# 3.8GB 没法一次性读进来，所以按 16MB 一块、块间重叠 256 字节地滚，
+# 免得关键词正好卡在分块边界上被切断。
+# NEEDLES 里那几条是我当时想找的东西：Cipher/SecretKeySpec 是想定位 AES 调用，
+# RJKD/XL1/raw.gitcode 是想把配置源的线索串起来。
 import re, sys
 
 PATH = r"E:\gear_analysis\mem.bin"

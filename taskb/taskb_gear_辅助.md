@@ -1,6 +1,6 @@
 # 齿轮辅助（com.huage.egaocl）逆向分析 — 360加固脱壳与作弊框架
 
-> 本文档记录对 PUBG/和平精英 外挂 **「齿轮辅助」`com.huage.egaocl`（俗称"花哥"）** 的完整脱壳与逆向取证过程，用于**安全防御**。
+> 本笔记记录对 PUBG/和平精英 外挂 **「齿轮辅助」`com.huage.egaocl`（俗称"华哥"）** 的完整脱壳与逆向分析过程，用于**安全防御**。
 > 线索链：齿轮辅助 → 更新提示 → 软件口袋 `com.rjkd.ruanku`（见 Task A）→ rjkd.cc → 蓝奏云。
 
 ---
@@ -9,14 +9,14 @@
 
 | 项目 | 结论 |
 |---|---|
-| 目标 | 齿轮辅助 `com.huage.egaocl`（PUBG/和平精英 外挂，俗称"花哥"） |
+| 目标 | 齿轮辅助 `com.huage.egaocl`（PUBG/和平精英 外挂，俗称"华哥"） |
 | 加固层次 | **四层**：360加固(libjiagu) + beingyi(别疑惑) SubApp 壳 + armadillo 云注入 + iapp3(Lua) 引擎 |
 | 真实作弊框架 | **VirtualApp 改名版**（`com.px` + `mirrorb` 包）虚拟化游戏进程注入 |
 | 脱壳结果 | 3 个 dex **全部离线解密**（XOR 密钥 = 包名，无需动态 dump） |
 | 支付/卡密 | iapp 官方支付 `iapp.yx93.com` + 发卡网 `sidai.wmrerey.cn`（带追踪参数） |
 | **C2 服务器** | **`http://yun.dzpgrw.cn:8080`（`202.189.4.117`，卡密验证 + 配置下发，DES 加密已破解）** |
 | **真实外挂脚本** | **`assets/lib.so` 是 iapp3 加密脚本包，已离线完全解密**（`mian.iyu`/`import.mjs`/`null.iyu`），无需设备 |
-| 反取证 | 字符串 AES 加密、卢恩字符混淆、app_ded 目录即时删除、反模拟器 SIGSEGV |
+| 反分析 | 字符串 AES 加密、卢恩字符混淆、app_ded 目录即时删除、反模拟器 SIGSEGV |
 | 日志上报 | `https://log-report.com/report` |
 | 关联分包 | `com.huage.pink.fangfeng`（"哔可防封"模块，脚本内跳转） |
 
@@ -51,7 +51,7 @@
 
 ---
 
-## 三、反取证手段
+## 三、反分析手段
 
 | 手段 | 表现 |
 |---|---|
@@ -59,7 +59,7 @@
 | 类/方法名混淆 | 卢恩字符（ʿ ˆ ˈ ˉ ˊ 等）类名 + 方法名 |
 | 反模拟器 | `/dev/qemu_pipe`、`/sys/block/mmcblk0/device/cid` 检测 |
 | 反调试 | 360 壳 libjiagu 检测 frida/调试器，MuMu 模拟器上直接 SIGSEGV 崩溃 |
-| 反取证 | 解密后 dex 写入 `/data/user/0/com.huage.egaocl/app_ded/`，加载后**立即删除** |
+| 反分析 | 解密后 dex 写入 `/data/user/0/com.huage.egaocl/app_ded/`，加载后**立即删除** |
 | 辱骂/挑衅 | `AAA拆包狗看这里.txt`（辱骂逆向者）+ `会画画的圈钱狗作品集.zip` |
 
 ---
@@ -148,7 +148,7 @@ def xor(data, key):
 | `PLUGIN_VERIFY` | `47ad424dc93ce95c6b8b400c4a698dc5` | 插件校验值 |
 | `VERSION_CODE` / `VERSION_NAME` | `23` / `2.3` | 云注入 SDK 版本 |
 
-> 注意：`assets/.appkey` = `2449186c83907774` 是**另一套**标注为云注入 APP_ID 的值；真正用于加解密的是 `App.APP_ID` = `b511f38fae0b82b50000242d50cf1ffd`。
+> 这里容易混：`assets/.appkey` = `2449186c83907774` 是**另一套**标注为云注入 APP_ID 的值；真正用于加解密的是 `App.APP_ID` = `b511f38fae0b82b50000242d50cf1ffd`。
 
 云注入用 **DES** 保护配置，两套独立密钥（详见 §5.5）。
 
@@ -418,7 +418,7 @@ return v0
 **`import.mjs` 在三款应用中大小与内容完全一致（15968 B，且同在偏移 4128）** ——
 它是 iapp3 引擎自带的 JS 桥，定义 `tw`/`ss`/`syso`/`fn` 等基础函数，与业务无关。
 
-#### 5.7.4 新还原出的可举报事实
+#### 5.7.4 新还原出的事实
 
 **`btxl`（冰糖雪梨）`mian.iyu`：**
 
@@ -492,13 +492,13 @@ https://sidai.wmrerey.cn/moc/by/index.html?rtkcid=6aa7e8399a51898e39081a32&rtkcm
 
 ---
 
-## 七、取证结论
+## 七、结论
 
 1. **齿轮辅助 = 四层加固**（360 + beingyi + armadillo 云注入 + iapp3），其中 beingyi 壳的 dex 加密算法是 **「包名循环 XOR」**，可直接离线解密，3 个 dex 共 7384 个类全部还原。
 2. **作弊核心技术 = 改名版 VirtualApp**（`com.px` + `mirrorb`），用于虚拟化运行「和平精英」并注入外挂功能，逃避游戏反作弊检测。
 3. **云注入 + 卡密验证**：armadillo SDK 通过 DES 加密的 C2 配置下发真实外挂 payload，卡密用 RSA 公钥加密上报；无效卡密引导至发卡网 `sidai.wmrerey.cn`。
 4. **收款链**：iapp 官方支付 `iapp.yx93.com` + 发卡网 `sidai.wmrerey.cn`（追踪参数可直接定位外挂作者收益）。
-5. **反取证**：反模拟器（SIGSEGV）、反调试、字符串 AES 加密、卢恩字符混淆、解密目录即时删除，且附辱骂逆向者的挑衅文件。
+5. **反分析**：反模拟器（SIGSEGV）、反调试、字符串 AES 加密、卢恩字符混淆、解密目录即时删除，且附辱骂逆向者的挑衅文件。
 6. **作者身份（据公开裁判文书/抖音公开信息，需与执法机关核实）**：本名王泽华，男，2004-07-27 生，江西省吉安市安福县人，因「提供侵入、非法控制计算机信息系统程序、工具罪」（刑法第285条第3款）于 2026-05-11 被逮捕（羁押于广东佛山三水区看守所），现缓刑释放；与脚本内签名「By.羽霖咲华Unishua」对应。羁押地在广东而籍贯在江西，表明该案由广东司法机关管辖（受害游戏方腾讯总部在深圳）。
 
    > 该案具体案号/判决书尚未在公开检索中索引到（本条身份信息经抖音公开视频检索所得），
@@ -536,4 +536,4 @@ https://sidai.wmrerey.cn/moc/by/index.html?rtkcid=6aa7e8399a51898e39081a32&rtkcm
 
 ---
 
-*本文档仅供安全防御研究使用。*
+*本笔记仅供安全防御研究使用。*

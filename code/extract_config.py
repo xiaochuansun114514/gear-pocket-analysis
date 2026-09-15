@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# extract_config.py — 从 mem.bin 提取解密后的配置明文与完整链接清单
+# extract_config.py — 从 mem.bin 里把明文配置和各种链接捞出来
+#
+# 内存是整个进程 3.8GB 全扒下来的，里面什么都有，所以干脆不写解析器了，直接扫。
+# 扫的过程中发现明文落在两类编码区里：UTF-8 那片是 AppConfig 对象的 URL 字段，
+# UTF-16LE 那片是个 VPN 导航 JSON。只扫 UTF-8 的话后面那个就漏了。
 # 用法: python extract_config.py <mem.bin>
 import mmap, re, json, sys
 

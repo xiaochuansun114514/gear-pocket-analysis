@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="软件下载地址与通知群入口">
+    <title>RJ 下载发布页</title>
+    <style>
+        :root {
+            --bg-start: #13bfa1;
+            --bg-end: #0b947d;
+            --surface: rgba(255, 255, 255, 0.96);
+            --surface-soft: #f1fbf8;
+            --text: #183f38;
+            --muted: #6c837e;
+            --primary: #0ea98e;
+            --primary-dark: #087a68;
+            --border: #d9ebe6;
+            --telegram: #229ed9;
+            --telegram-dark: #1688bd;
+            --shadow: 0 18px 52px rgba(4, 72, 61, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-width: 0;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            color: var(--text);
+            font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, var(--bg-start) 0%, #0db496 44%, var(--bg-end) 100%);
+            isolation: isolate;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            width: min(100% - 28px, 500px);
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 30px 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .background-effects {
+            position: fixed;
+            z-index: 0;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .background-effects::before,
+        .background-effects::after {
+            position: absolute;
+            width: 42vw;
+            min-width: 420px;
+            aspect-ratio: 1;
+            content: "";
+            border-radius: 50%;
+            filter: blur(12px);
+            opacity: 0.28;
+            animation: glow-pulse 9s ease-in-out infinite alternate;
+        }
+
+        .background-effects::before {
+            top: -25%;
+            left: -12%;
+            background: radial-gradient(circle, rgba(123, 255, 228, 0.72) 0%, rgba(123, 255, 228, 0) 68%);
+        }
+
+        .background-effects::after {
+            right: -14%;
+            bottom: -34%;
+            background: radial-gradient(circle, rgba(1, 91, 78, 0.56) 0%, rgba(1, 91, 78, 0) 70%);
+            animation-delay: -4s;
+        }
+
+        .particle {
+            position: absolute;
+            left: var(--left);
+            top: var(--top);
+            width: var(--size);
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transform: rotate(var(--rotate));
+            animation: particle-float var(--duration) ease-in-out var(--delay) infinite alternate;
+        }
+
+        .particle--1 {
+            --left: 5%;
+            --top: 18%;
+            --size: 74px;
+            --rotate: 18deg;
+            --shift-x: 34px;
+            --shift-y: -42px;
+            --duration: 9s;
+            --delay: -4s;
+        }
+
+        .particle--2 {
+            --left: 14%;
+            --top: 66%;
+            --size: 116px;
+            --rotate: 7deg;
+            --shift-x: -25px;
+            --shift-y: -58px;
+            --duration: 12s;
+            --delay: -8s;
+        }
+
+        .particle--3 {
+            --left: 31%;
+            --top: 86%;
+            --size: 54px;
+            --rotate: 33deg;
+            --shift-x: 28px;
+            --shift-y: -36px;
+            --duration: 8s;
+            --delay: -2s;
+        }
+
+        .particle--4 {
+            --left: 77%;
+            --top: 14%;
+            --size: 92px;
+            --rotate: 24deg;
+            --shift-x: -36px;
+            --shift-y: 45px;
+            --duration: 11s;
+            --delay: -5s;
+        }
+
+        .particle--5 {
+            --left: 89%;
+            --top: 52%;
+            --size: 62px;
+            --rotate: 41deg;
+            --shift-x: -28px;
+            --shift-y: -55px;
+            --duration: 10s;
+            --delay: -7s;
+        }
+
+        .particle--6 {
+            --left: 82%;
+            --top: 77%;
+            --size: 154px;
+            --rotate: -8deg;
+            --shift-x: 34px;
+            --shift-y: -40px;
+            --duration: 13s;
+            --delay: -10s;
+        }
+
+        .particle--7 {
+            --left: 55%;
+            --top: 6%;
+            --size: 46px;
+            --rotate: 29deg;
+            --shift-x: 24px;
+            --shift-y: 38px;
+            --duration: 8s;
+            --delay: -6s;
+        }
+
+        .particle--8 {
+            --left: 66%;
+            --top: 90%;
+            --size: 78px;
+            --rotate: 14deg;
+            --shift-x: -30px;
+            --shift-y: -44px;
+            --duration: 10s;
+            --delay: -3s;
+        }
+
+        @keyframes particle-float {
+            from {
+                transform: translate3d(0, 0, 0) rotate(var(--rotate));
+            }
+
+            to {
+                transform: translate3d(var(--shift-x), var(--shift-y), 0) rotate(calc(var(--rotate) + 32deg));
+            }
+        }
+
+        @keyframes glow-pulse {
+            from {
+                transform: scale(0.92);
+                opacity: 0.18;
+            }
+
+            to {
+                transform: scale(1.12);
+                opacity: 0.34;
+            }
+        }
+
+        .page-header {
+            margin-bottom: 16px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: clamp(31px, 3.5vw, 38px);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+            text-shadow: 0 3px 14px rgba(3, 68, 57, 0.2);
+        }
+
+        .page-header p {
+            margin: 9px 0 0;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .release-card {
+            padding: 15px;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.78);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .bookmark-notice {
+            padding: 12px 14px;
+            color: #fff;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.5;
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .intro {
+            padding: 22px 4px 14px;
+        }
+
+        .section-label {
+            margin: 0 0 6px;
+            color: var(--primary-dark);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        .intro h2 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: clamp(22px, 3vw, 26px);
+            line-height: 1.32;
+        }
+
+        .intro-copy {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding: 8px 2px 2px;
+        }
+
+        .action-button {
+            min-height: 62px;
+            padding: 11px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            color: var(--primary-dark);
+            text-align: left;
+            text-decoration: none;
+            line-height: 1.3;
+            background: var(--surface-soft);
+            border: 1px solid #c8e5dd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        }
+
+        .action-copy {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .action-title {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+        }
+
+        .action-meta {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .action-side {
+            flex: 0 0 auto;
+            font-size: 12px;
+            font-weight: 700;
+            opacity: 0.72;
+        }
+
+        .action-button.primary {
+            color: #fff;
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 10px 24px rgba(14, 169, 142, 0.22);
+        }
+
+        .action-button.primary .action-meta,
+        .action-button.telegram .action-meta {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .action-button.telegram {
+            color: #fff;
+            background: var(--telegram);
+            border-color: var(--telegram);
+            box-shadow: 0 10px 24px rgba(34, 158, 217, 0.2);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 22px rgba(4, 72, 61, 0.12);
+        }
+
+        .action-button.primary:hover {
+            background: #0b967e;
+        }
+
+        .action-button.telegram:hover {
+            background: var(--telegram-dark);
+        }
+
+        .action-button:focus-visible {
+            outline: 3px solid rgba(14, 169, 142, 0.3);
+            outline-offset: 3px;
+        }
+
+        .page-footer {
+            margin-top: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                width: min(100% - 24px, 500px);
+                padding: 28px 0 18px;
+                justify-content: flex-start;
+            }
+
+            .page-header {
+                margin-bottom: 16px;
+            }
+
+            .page-header p {
+                font-size: 14px;
+            }
+
+            .release-card {
+                padding: 15px;
+                border-radius: 14px;
+            }
+
+            .bookmark-notice {
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            .intro {
+                padding: 20px 2px 12px;
+            }
+
+            .actions {
+                padding: 6px 2px 2px;
+            }
+
+            .action-button {
+                min-height: 60px;
+            }
+
+            .particle {
+                opacity: 0.72;
+            }
+
+            .particle--2,
+            .particle--6 {
+                --size: 88px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .action-button {
+                transition: none;
+            }
+
+            .background-effects::before,
+            .background-effects::after,
+            .particle {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background-effects" data-background-effects aria-hidden="true">
+    <span class="particle particle--1"></span>
+    <span class="particle particle--2"></span>
+    <span class="particle particle--3"></span>
+    <span class="particle particle--4"></span>
+    <span class="particle particle--5"></span>
+    <span class="particle particle--6"></span>
+    <span class="particle particle--7"></span>
+    <span class="particle particle--8"></span>
+</div>
+<div class="page">
+    <header class="page-header">
+        <h1>RJ 下载发布页</h1>
+        <p>软件下载地址与通知群入口</p>
+    </header>
+
+    <main class="release-card">
+        <div class="bookmark-notice">请收藏 rjkd.app，避免失联</div>
+
+        <section class="intro" aria-labelledby="download-title">
+            <p class="section-label">软件下载</p>
+            <h2 id="download-title">选择一个地址开始下载</h2>
+            <p class="intro-copy">
+                两个下载地址内容一致，若一个无法打开请切换另一个；软件更新与地址变更会在 TG 通知群发布。
+            </p>
+        </section>
+
+        <nav class="actions" aria-label="下载与通知入口">
+                            <a
+                    class="action-button primary"
+                    href="https://wwasb.lanzoum.com/b01bjn5kcd"
+                    aria-label="rjkd.cc 下载地址"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="action-copy">
+                        <span class="action-title">rjkd.cc</span>
+                        <span class="action-meta">蓝奏云下载</span>
+                    </span>
+                    <span class="action-side">打开</span>
+                </a>
+                            <a
+                    class="action-button secondary"
+                    href="https://wwasb.lanzoum.com/b01bjn5kfg"
+                    aria-label="rjkd.top 下载地址"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="action-copy">
+                        <span class="action-title">rjkd.top</span>
+                        <span class="action-meta">蓝奏云下载</span>
+                    </span>
+                    <span class="action-side">打开</span>
+                </a>
+                            <a
+                    class="action-button telegram"
+                    href="https://t.me/rjkd666"
+                    aria-label="TG 通知群"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="action-copy">
+                        <span class="action-title">TG 通知群</span>
+                        <span class="action-meta">获取更新通知</span>
+                    </span>
+                    <span class="action-side">加入</span>
+                </a>
+                    </nav>
+    </main>
+
+    <footer class="page-footer">
+        Copyright © 2026 rjkd.app. All Rights Reserved.
+    </footer>
+</div>
+</body>
+</html>

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# ag_findkey.py — locate methods whose code references a given string, print full disassembly.
+# ag_findkey.py — 按字符串反查方法，找到了就把整段反汇编打出来
+#
+# 和 dex_disasm.py 干的是同一件事，区别是这个用 androguard，省事。
+# 壳把类名方法名都换成卢恩字符了（ᛱᛱᛱᛷᛷ 这种），根本没法按名字找，
+# 只能反过来先找到某个字符串，再顺着引用往上摸到方法。
 import sys, logging
 logging.disable(logging.CRITICAL)
 from androguard.core.dex import DEX

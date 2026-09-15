@@ -1,0 +1,6 @@
+# Python 编译缓存
+__pycache__/
+*.pyc
+
+# raw/ 里这份 zip 与 taskb/会画画的圈钱狗作品集.zip 是同一个文件，不重复传
+raw/huage_works.zip

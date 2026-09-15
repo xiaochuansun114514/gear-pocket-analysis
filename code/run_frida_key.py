@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-# run_frida_key.py — spawn 软件口袋 并 hook abcdstr 抓 AES 密钥
+# run_frida_key.py — spawn 软件口袋，配合 hook_abcdstr.js 抓 AES 密钥
+#
+# 结论：没成功。spawn 完 attach 上去，进程立刻退出，脚本一条日志都没发回来。
+# 后来换的路子是放弃 hook，改用 root 读 /proc/PID/mem 把内存整个扒下来，
+# 再从内存里扫 dex 和明文配置 —— 那招一次就通了。
+# 这个脚本留着，是为了记住"跟反调试硬刚"这条路当时是怎么走死的。
 import frida, sys, time
 
 SERIAL = "127.0.0.1:16416"

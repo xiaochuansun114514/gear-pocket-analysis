@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
-"""通用 iapp3 bundle 解密器 —— 三个应用(egaocl/btxl/fangfeng)一次全解"""
+"""通用 iapp3 bundle 解密器 —— 三个应用(egaocl/btxl/fangfeng)一次全解
+
+算法全在 libygsiyu.so 里，这个脚本就是把它离线复现了一遍，跑起来不需要设备、不用开 app。
+推导过程都记在 ../../逆向思路.md 了，这里只留我算过之后写下来的东西。
+
+当初是先 readelf -s 翻了一眼符号表，看见 slky / asendn / djyj 这几个名字，
+就知道该从哪儿下手了，省了读汇编的功夫。
+"""
 import hashlib, zipfile, os
 from Crypto.Cipher import AES
 
 DNGB_DEFAULT = b'5556367'
-# 每个应用 com.iapp.app.f.b() 的硬编码常量各不相同（实测）
+# 一开始我以为 DNGB 是 native 里的常量，三款应用应该共用同一个值，
+# 就拿 egaocl 的 5556367 去解 btxl 和 fangfeng —— AES 出来全是垃圾。
+# 回头才想明白 dngb() 是 to_string(com.iapp.app.f.b())，值是从 Java 侧传上来的，
+# 每个 apk 的 classes.dex 各编各的。这也是为什么在 .so 里 grep 这几个数根本没有。
 DN = {'egaocl': b'5556367', 'btxl': b'3401192', 'fangfeng': b'2405525'}
 
 APPS = {
@@ -20,11 +30,23 @@ APPS = {
 }
 
 def cdiv(a,b):
+    # slky 是在 C 里编的，C 的除法往零截断，Python 往下取整
+    # （-7/2 在 C 里是 -3，在 Python 里是 -4）。所以照着汇编抄的时候，
+    # // 和 % 都得换成这俩，不然密钥算出来是错的。
     q=abs(a)//abs(b); return q if (a<0)==(b<0) else -q
 def cmod(a,b): return a-cdiv(a,b)*b
-def s8(x): return x-256 if x>=128 else x
+def s8(x):
+    # 汇编里求和、取绝对值都是按有符号字节算的。
+    # 我一开始按无符号写的，跑出来密钥不对，查了半天——因为大部分输入下两种算法结果一样，
+    # 只有字节上了 128 才分叉，很难一眼看出来。
+    return x-256 if x>=128 else x
 
 def slky(a1,a2):
+    """iapp::mete::slky —— 从汇编一行行抄下来的。
+
+    不是标准 HMAC，是作者自己搓的加盐 MD5：先按长度和有符号字节和算个种子，
+    再异或、MD5、然后来回换位。找现成实现是找不到的，只能照着抄。
+    """
     L=len(a1)
     if L==0: return b''
     ssum=L+sum(s8(x) for x in a1); q=cdiv(ssum,L); rem=cmod(ssum,L)
@@ -40,9 +62,15 @@ def slky(a1,a2):
         md[j],md[i]=md[i],md[j]
     return bytes(md)
 
-def aes_dec(d,k): return AES.new(k,AES.MODE_CBC,k).decrypt(d[:len(d)//16*16])
-def xorrep(d,k): return bytes(b^k[i%len(k)] for i,b in enumerate(d))
+def aes_dec(d,k):
+    # asendn(mode=2)：AES-128-CBC/PKCS5。
+    # IV 从汇编看像是跟 KEY 同一个值，但这假设猜错就全盘皆输，
+    # 所以我在真机上挂了个只读 hook 抓了下参数，确认 IV 确实就是 KEY。
+    return AES.new(k,AES.MODE_CBC,k).decrypt(d[:len(d)//16*16])
+def xorrep(d,k): return bytes(b^k[i%len(k)] for i,b in enumerate(d))   # djyj：循环 XOR
 def unpkcs5(d):
+    # 靠这个确认密钥对不对。PKCS5 填充校验过了基本就没跑，
+    # 比盯着乱码看可读性靠谱得多。
     n=d[-1] if d else 0
     return d[:-n] if 1<=n<=16 and d[-n:]==bytes([n])*n else None
 
@@ -69,6 +97,12 @@ def solve(tag):
     return A,GDTH,sb,fp
 
 def entry(fp,GDTH,name,DNGB):
+    """从解好的包里抠一个条目。
+
+    格式是 [K1:16B][密文][K2:16B]：K1 是这个条目的开头标记，K2 是结尾标记，
+    夹在中间那段密文再用 K3 解。所以我一开始的思路就是拿名字去算 K1，
+    在包里 find 一下——能找到就说明名字猜对了，找不到就换个名再试。
+    """
     s2c=GDTH+DNGB
     K1=slky(name,s2c); i1=fp.find(K1)
     if i1<0: return None
@@ -77,6 +111,9 @@ def entry(fp,GDTH,name,DNGB):
     K3=slky(name+s2c,name)
     return i1,i2,xorrep(aes_dec(fp[i1+16:i2],K3),K3)
 
+# 这些是最早一批能猜到的名字。剩下的（xf.iyu / qzhtc.iyu 这种作者自造的缩写）
+# 我暴力跑过二十多万种组合，一个都没中，才反应过来这类名字是猜不到的。
+# 后来换成从已解出的脚本明文里正则扫引用，一层层往外滚，从 1 个滚到了 15 个。
 NAMES=[b'mian.iyu',b'import.mjs',b'null.iyu',b'import.iyu',b'init.iyu',
        b'mian.mjs',b'main.iyu',b'a.iyu',b'b.iyu',b'c.iyu',b'lua.iyu',
        b'index.iyu',b'mian',b'import']

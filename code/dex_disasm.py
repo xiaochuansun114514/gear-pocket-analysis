@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-# dex_disasm.py — minimal DEX parser + disassembler to locate decrypt methods.
+# dex_disasm.py — 手搓的最小 DEX 解析器 + 反汇编器，用来定位解密方法。
+#
+# 当时手上没有 androguard，又急着看那几个方法里引用了哪些字符串，
+# 就照 DEX 文件格式自己写了一个：解 header、查 string_ids、扫 code item，
+# 把引用了目标字符串的方法整段打出来。
+# 后来装了 androguard 之后就不太用它了，但回头看，手写一遍反而把 DEX 结构摸清楚了。
 # Usage: python dex_disasm.py <dex> <string_idx> [string_idx ...]
 #   Finds all code items referencing the given string_ids and dumps their
 #   const-string / const-class / invoke targets so we can read the method.

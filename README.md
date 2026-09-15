@@ -1,11 +1,15 @@
-# 软件口袋（com.rjkd.ruanku）逆向分析 — 配置与分发链路
+# 软件口袋 & 齿轮辅助（华哥）系列 — 逆向分析
 
-> 本文档记录对非法软件下载库 **「软件口袋」`com.rjkd.ruanku`（域名 rjkd.cc）** 的逆向分析全过程，用于**安全防御**。
-> 线索来源：某游戏外挂「齿轮辅助」`com.huage.egaocl` 的更新提示会跳转到本软件（齿轮辅助本体见 Task B）。
+> 本笔记记录同一条黑产链路上两个关联目标的逆向分析全过程，用于**安全防御**：
+> - **软件口袋** `com.rjkd.ruanku`（非法软件下载库，域名 rjkd.cc）
+> - **齿轮辅助（华哥）系列**（齿轮辅助 / 冰糖雪梨 / 哔可防封，作者 By.羽霖咲华Unishua / 华哥）
+> 线索来源：某游戏外挂「齿轮辅助」`com.huage.egaocl` 的更新提示会跳转到「软件口袋」`com.rjkd.ruanku`。
 
 ---
 
-## 一、结论速览（TL;DR）
+# Task A — 软件口袋 `com.rjkd.ruanku`
+
+## A1、结论速览（TL;DR）
 
 | 项目 | 结论 |
 |---|---|
@@ -19,7 +23,7 @@
 
 ---
 
-## 二、环境与工具
+## A2、环境与工具
 
 | 工具 | 版本/位置 | 用途 |
 |---|---|---|
@@ -33,16 +37,16 @@
 
 ---
 
-## 三、完整分析过程
+## A3、完整分析过程
 
-### 3.1 定位目标
+### A3.1 定位目标
 
 1. 某游戏外挂「齿轮辅助」`com.huage.egaocl`（360加固）的更新提示，跳转到本软件 **`com.rjkd.ruanku`（软件口袋）**。
 2. 域名 `rjkd.cc` 302 跳转到蓝奏云文件夹 `https://wwasb.lanzoum.com/b01bjn5kcd`，解析到阿里云香港 `8.210.31.46`。
 
 APK 的 classes.dex 被盈安壳保护（指令抽取），jadx 反编译零输出，**静态分析后，动态分析**。
 
-### 3.2 模拟器 + MITM 抓包（拿到配置 URL）
+### A3.2 模拟器 + MITM 抓包（拿到配置 URL）
 
 ```bash
 adb connect 127.0.0.1:16416
@@ -77,7 +81,7 @@ https://raw.gitcode.com/RJKD/RJKD2/raw/main/XL1
 - sha = `eacdc6509b7bf746eb7b0d2ca4e0e6e50d037d63`
 - XL1 内容 = **纯 hex 字符串**（66180 字节，无空白）
 
-### 3.3 免 frida 内存转储（绕过盈安壳反调试）
+### A3.3 免 frida 内存转储（绕过盈安壳反调试）
 
 盈安壳反调试：扫 `/proc/maps` 找 "frida" + grep `/data/tombstones` + jdwp/JVMTI 检测 + arm64 内联 svc 自杀。frida attach 会被杀。
 
@@ -90,7 +94,7 @@ adb shell "dd if=/proc/PID/mem bs=4096 skip=<page> count=<n>" > mem.bin
 
 得到 `mem.bin`（3.8GB 完整进程内存）。之后扫描 `dex\n035` 魔数提取 dex、扫 UTF-16LE/UTF-8 字符串取明文。
 
-### 3.4 提取并还原解密后的配置（拿到链接清单）
+### A3.4 提取并还原解密后的配置（拿到链接清单）
 
 内存里 `lanzou` 出现在两类编码：
 - **UTF-8 区域（offset ~4701334，136 处）**：AppConfig 对象的 URL 字段 = 外挂/破解软件目录
@@ -122,9 +126,9 @@ obj, end = dec.raw_decode(data, data.find('['))
 print(obj)  # 16 条 {图片,打开方式,副标题,标题,链接}
 ```
 
-### 3.5 逆向解密算法
+### A3.5 逆向解密算法
 
-#### 3.5.1 字符串常量混淆（控制流平坦化 + 自定义 XOR 流）
+#### A3.5.1 字符串常量混淆（控制流平坦化 + 自定义 XOR 流）
 
 dex 反汇编发现 `run` 方法被**控制流平坦化**（`packed-switch` 合并大量方法），类/方法名用卢恩字符（`ᛱᛱᛱᛷᛷ` 等）混淆。
 
@@ -142,7 +146,7 @@ return new String(b, "UTF-8");
 
 > **重要更正**：`0123456789abcdef` 一开始被误判为 AES 密钥，实为 hex 解码的**字符映射表**（`map.indexOf(c)` 查值）。
 
-#### 3.5.2 配置解密（AES）
+#### A3.5.2 配置解密（AES）
 
 定位到加密工具类 `Lᛱᛱᛱᛲᛸ/ᛱᛱᛱᛷᛶ;`（dex 2 内），关键方法反汇编：
 
@@ -163,15 +167,15 @@ byte[] decrypt(byte[] data, int index) {
 - 算法名 `abcdstr(7902)`、变换 `abcdstr(8121/8122)`、密钥 `abcdstr(8242/8243/8244)` 全部由**壳的字符串解密器 `Lv/m/p;->abcdstr(I)`** 在运行时解密。
 - `v/m/p` 类在壳自己的 dex 里（dump 中损坏），且反调试杀 frida，**密钥确切值仅运行时物化**，未能离线抓取。
 
-#### 3.5.3 XOR 流排除
+#### A3.5.3 XOR 流排除
 
 对 XL1 尝试用字符串常量的 XOR 流算法暴力破解（salt/key 各 0~255），前两字节可解出 `[{` 但第三字节起乱码，证明**配置不是 XOR 流，而是 AES**。
 
 ---
 
-## 四、完整链接清单（解密结果）
+## A4、完整链接清单（解密结果）
 
-### 4.1 蓝奏云分享文件夹（外挂/破解软件分发，核心证据）
+### A4.1 蓝奏云分享文件夹（外挂/破解软件分发，核心证据）
 
 | # | 链接 | 备注 |
 |---|---|---|
@@ -186,7 +190,7 @@ byte[] decrypt(byte[] data, int index) {
 | 9 | https://wwasb.lanzoux.com/b01bjfkdbc | 《软件口袋》2 |
 | 10 | https://wwasl.lanzoum.com/b01bjff50d | VPN 须知入口 |
 
-### 4.2 官网 / 导航域名
+### A4.2 官网 / 导航域名
 
 | 链接 | 用途 |
 |---|---|
@@ -199,7 +203,7 @@ byte[] decrypt(byte[] data, int index) {
 | https://rjkd.app/2/1/ ～ /2/3/ | API 端点 |
 | https://t.me/rjkd666 | Telegram 频道 |
 
-### 4.3 蓝奏云代理 API（带一次性 token）
+### A4.3 蓝奏云代理 API（带一次性 token）
 
 ```
 https://api.ilanzou.com/unproved/pd/url?id=13518563&time=1789376596&token=207d2f9db746f7b3378c65ede3d6b806&type=2
@@ -209,19 +213,19 @@ https://api.ilanzou.com/unproved/pd/url?id=13871682&time=1789376596&token=ff3b25
 https://api.ilanzou.com/unproved/pd/url?id=13871876&time=1789376597&token=b4ff9af6ac8a3afa678dd6039e1a2509&type=2
 ```
 
-### 4.4 图片 CDN
+### A4.4 图片 CDN
 
 - `https://cdn.imgos.cn/`（vip 图片）
 - `https://img.meituan.net/`（美团图床，存软件封面）
 - `https://image.woozooo.com/`（蓝奏云图床）
 
-### 4.5 VPN 导航小配置（16 条，UTF-16LE，需 VPN 进入）
+### A4.5 VPN 导航小配置（16 条，UTF-16LE，需 VPN 进入）
 
 Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、AfreecaTV、Potato、Fyptt、成人网站等，配图来自 `cdn.imgos.cn`。
 
 ---
 
-## 五、核心代码
+## A5、核心代码
 
 脚本已归档到 `code/` 目录：
 
@@ -241,7 +245,7 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 
 ---
 
-## 六、反调试与脱壳技术备忘
+## A6、反调试与脱壳技术备忘
 
 - **frida 17 API 变化**：`Module.findExportByName` 移除 → 用 `Process.getModuleByName('libc.so').findExportByName(name)`；不自动注入 Java bridge。
 - **盈安壳反调试**：扫 `/proc/maps` 找 "frida" + grep `/data/tombstones` + jdwp/JVMTI 检测 + arm64 内联 svc 自杀（libc hook 拦不住 svc）。
@@ -250,7 +254,7 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 
 ---
 
-## 七、GitCode 仓库信息（配置源）
+## A7、GitCode 仓库信息（配置源）
 
 - 平台：GitCode（`raw.gitcode.com`，解析 `116.205.2.202`）
 - 仓库：`RJKD/RJKD2`（owner=RJKD，仅一个文件 XL1）
@@ -258,10 +262,80 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 
 ---
 
-## 八、结论
+## A8、结论
 
 1. 软件口袋（rjkd.cc）→ 蓝奏云 + GitCode 的分发链已完全摸清，**无独立后端服务器**，全部寄生在免费网盘/代码托管平台。
 2. 配置文件 XL1 通过 GitCode 公开仓库分发，hex+AES 加密，密钥藏于盈安壳字符串表（运行时物化）。
 3. 完整外挂/破解软件下载目录（10 个蓝奏文件夹）已提取。
 4. 附带传播 VPN 翻墙导航与成人内容。
 5. 嘿嘿嘿。
+
+
+---
+
+# Task B — 齿轮辅助（华哥）系列
+
+## B1、结论速览（TL;DR）
+
+| 项目 | 结论 |
+|---|---|
+| 目标 | 齿轮辅助 `com.huage.egaocl`（PUBG/和平精英 外挂，俗称"华哥"） |
+| 同源变体 | 冰糖雪梨 `com.huage.pubgm.btxl` 2.3.0 / 哔可防封 `com.huage.pink.fangfeng` 6.5.1 |
+| 作者 | By.羽霖咲华Unishua（华哥），三款应用共用同一套 iapp3(爱根) 脚本引擎，仅身份常量不同 |
+| 加固层次 | **四层**：360加固(libjiagu) + beingyi(别疑惑) SubApp 壳 + armadillo 云注入 + iapp3(Lua) 引擎 |
+| 真实作弊框架 | **VirtualApp 改名版**（`com.px` + `mirrorb` 包）虚拟化游戏进程注入 |
+| 脱壳结果 | 3 个 dex **全部离线解密**（XOR 密钥 = 包名，无需动态 dump） |
+| 支付/卡密 | iapp 官方支付 `iapp.yx93.com` + 发卡网 `sidai.wmrerey.cn`（带追踪参数） |
+| **C2 服务器** | **`http://yun.dzpgrw.cn:8080`**（`202.189.4.117`，卡密验证 + 配置下发，DES 加密已破解） |
+| **真实外挂脚本** | **`assets/lib.so` 是 iapp3 加密脚本包，已离线完全解密**（`mian.iyu`/`import.mjs`/`null.iyu`） |
+| 反分析 | 字符串 AES 加密、卢恩字符混淆、app_ded 目录即时删除、反模拟器 SIGSEGV |
+| 日志上报 | `https://log-report.com/report` |
+
+## B2、目录说明
+
+本部分完整内容位于 [`taskb/`](taskb/) 子目录：
+
+| 文件/目录 | 内容 |
+|---|---|
+| [`taskb/taskb_gear_辅助.md`](taskb/taskb_gear_辅助.md) | 完整分析笔记（加固、反分析、脱壳、脚本解密、C2、支付卡密、结论） |
+| [`taskb/dec_all.py`](taskb/dec_all.py) | 三款应用通用 iapp bundle 离线解密器（已验证） |
+| [`taskb/dec_iyu.py`](taskb/dec_iyu.py) | 齿轮辅助单应用版解密器（已验证） |
+| [`taskb/decrypt_src.py`](taskb/decrypt_src.py) | beingyi(别疑惑) 壳 `src/` 真实 dex 解密器 |
+| [`taskb/unpacked/`](taskb/unpacked/) | 从三款应用解出的明文 `.iyu` / `.mjs` 脚本（作弊菜单、C2、悬浮窗、权限等） |
+| [`taskb/会画画的圈钱狗作品集.zip`](taskb/) | 从 APK 提取的原件（作者嘲讽破解者的图片集，含 1 个无法解密的加密项 `作者坦白`） |
+| [`taskb/圈钱狗作品集_明文/`](taskb/圈钱狗作品集_明文/) | 上述 zip 中可解出的 6 个明文图片 |
+| [`taskb/AAA拆包狗看这里.txt`](taskb/AAA拆包狗看这里.txt) | APK 内作者辱骂破解者的原文 |
+| [`taskb/样本包_齿轮辅助系列_加密码.zip`](taskb/) | 三款 APK 原件的加密样本包 |
+
+## B3、核心突破
+
+1. **beingyi 壳的 dex 加密 = 「包名循环 XOR」**，可直接离线解密，3 个 dex 共 7384 个类全部还原，无需动态 dump。
+2. **作弊核心技术 = 改名版 VirtualApp**（`com.px` + `mirrorb`），虚拟化运行「和平精英」并注入功能，逃避游戏反作弊检测。
+3. **iapp3 脚本包 `assets/lib.so` 离线完全解密**：三级密钥派生（`slky` 加盐 MD5 置换 + AES-128-CBC（IV==KEY）+ `djyj` 循环 XOR），三款应用共用同一算法，仅 `DNGB` 身份常量不同。
+4. **`DNGB` 是每个应用各编各的 Java 常量**：`com.iapp.app.f.b()` → egaocl=5556367、btxl=3401192、fangfeng=2405525。
+5. **云注入 + 卡密验证**：armadillo SDK 通过 DES/CBC（key=IV=`KbMMxfM,`）的 C2 配置下发真实 payload，卡密用 RSA 公钥加密上报。
+
+## B4、样本包口令
+
+```
+infected
+```
+
+样本包使用 **AES-256**（pyzipper）加密，口令统一为 `infected`（恶意样本分析的通用口令）。
+解压示例：`python -c "import pyzipper; pyzipper.AESZipFile('样本包_齿轮辅助系列_加密码.zip').extractall(pwd=b'infected')"`。
+
+## B5、尚未解决
+
+1. 作者放置的 `会画画的圈钱狗作品集.zip` 内加密项 `作者坦白`（ZipCrypto 传统加密）口令未知，字典 + 1.7 亿掩码均未命中；口令不在任何 dex 内（应用运行时不打开该 zip）。
+2. 冰糖雪梨 bundle 中约 **2.76 万字节**脚本因条目名未枚举完，尚未解出（主脚本、作弊菜单 `xf.iyu`、测试页 `test.iyu` 均已解出）。
+3. 每个包偏移 `0..4128` 的第 1 个条目名（4096 B 密文）未知，需运行期 hook `iapp::h3` 抓取。
+
+---
+
+## 附：详细逆向思路
+
+口袋与齿轮两款目标的完整解密思路（含**失败方法与成功方法**的逐步记录）见 [`逆向思路.md`](逆向思路.md)。
+
+---
+
+*本笔记仅供安全防御研究使用。*
