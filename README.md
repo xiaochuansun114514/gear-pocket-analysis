@@ -325,7 +325,7 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 | `taskb/样本包_齿轮辅助系列_加密码.zip` | AES-256（pyzipper） | **`infected`** |
 | `taskb/会画画的圈钱狗作品集.zip` | ZipCrypto，仅 `作者坦白` 一项加密 | 未知，见 §B5 |
 
-`样本包_齿轮辅助系列_加密码.zip` 里装的是三款 APK 的原件，**口令就是 `infected`**——全小写、7 个字母，是恶意样本分析里通用的那个口令，不是需要破解的东西。
+`样本包_齿轮辅助系列_加密码.zip` 里装的是三款 APK 的原件，**口令就是 `infected`**，恶意样本分析里通用口令，。
 
 解压：
 
@@ -333,7 +333,7 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 python -c "import pyzipper; pyzipper.AESZipFile('样本包_齿轮辅助系列_加密码.zip').extractall(pwd=b'infected')"
 ```
 
-> 别和 §B5 那个搞混：**`作者坦白` 是另一个 zip 里的条目**，它用的是 ZipCrypto，口令至今没解出来。
+>  §B5 的和这个不一样：**`作者坦白` 是另一个 zip 里的条目**，它用的是 ZipCrypto，口令至今没解出来。
 > 两个包的口令不是一回事。
 
 ## B5、尚未解决
