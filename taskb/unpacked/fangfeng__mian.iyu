@@ -1,0 +1,247 @@
+<View id="30" did="0" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+BackgroundColor=#ffa2c6
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="5" did="0" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+background=@1688810379259.png
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="32" did="5" type="RelativeLayout">
+<ppt>
+width=-1
+height=-2
+BackgroundColor=#ff95ab
+</ppt>
+<event>
+</event>
+</View>
+<View id="35" did="32" type="ImageView">
+<ppt>
+width=60dp
+height=60dp
+src=@img_2.png
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="34" did="32" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=哔可防封
+textColor=#000000
+textStyle=bold
+textSize=16sp
+typeface=@66.ttf
+layout_gravity=center_vertical
+gravity=center_vertical
+layout_margintop=22dp
+layout_marginleft=66dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="85" did="5" type="CardView">
+<ppt>
+width=-1
+height=150dp
+layout_marginLeft=15dp
+layout_marginRight=15dp
+app_CardcornerRadius=8dp
+layout_marginTop=70dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#f7f7f7
+layout_margintop=75dp
+layout_marginleft=14dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="88" did="85" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="89" did="88" type="ImageView">
+<ppt>
+width=-1
+height=-1
+src=@1689020081359.png
+scaleType=centercrop
+</ppt>
+<event>
+</event>
+</View>
+<View id="91" did="88" type="LinearLayout">
+<ppt>
+width=-1
+height=30dp
+orientation=vertical
+background=#33000000
+gravity=center_vertical
+layout_margintop=-29dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="92" did="91" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=点击这里加入QQ群✌︎( ᐛ )✌︎
+layout_marginLeft=10dp
+textSize=12sp
+textColor=#ffffff
+</ppt>
+<event>
+</event>
+</View>
+<View id="90" did="85" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=bottom
+background=through
+</ppt>
+<event>
+<eventItme type="clicki">
+hw("http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=rPbLw5ZuyihyJElSYU7b-wSwyDdENvxk&authKey=vuzouOhq106sq8IcXKmTBZdM4o%2FsY3cCy4BiVqBnk8ra%2FjJskU12MEaVDcpsqsh9&noverify=0&group_code=930273991")
+</eventItme>
+</event>
+</View>
+<View id="93" did="5" type="RelativeLayout">
+<ppt>
+width=-2
+height=-2
+layout_margintop=237dp
+layout_marginleft=-1dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="42" did="93" type="ImageView">
+<ppt>
+width=30dp
+height=30dp
+src=@c6r.png
+layout_margintop=0dp
+layout_marginleft=18dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="120" did="93" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+textcolor=#000000
+textSize=14sp
+ut_toRightOf=42
+layout_marginLeft=12dp
+text=悬浮窗
+layout_gravity=center_vertical
+gravity=center_vertical
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+ug(120,"checked",zt)
+s w =-2
+s h =-2
+s g ="top|left"
+f(zt==true)
+{
+uxf("sto.iyu",w,h,g,sss.xfc)
+sl(a,";",c)
+uls(lb,c)
+}
+else
+{
+uxf(sss.xfc,"del")
+}
+</eventItme>
+</event>
+</View>
+<View id="118" did="93" type="Button">
+<ppt>
+width=120dp
+height=36dp
+text=下载齿轮辅助
+textStyle=bold
+textsize=12dp
+textColor=#ffffff
+BackgroundColor=#ff88ab
+layout_margintop=38dp
+layout_marginleft=16dp
+</ppt>
+<event>
+<eventItme type="clicki">
+hws("https://wwr.lanzoui.com/b0ezcm31i")
+tw("访问密码：6666")
+</eventItme>
+</event>
+</View>
+<View id="122" did="93" type="Button">
+<ppt>
+width=120dp
+height=36dp
+text=高级权限配置
+textStyle=bold
+textsize=12dp
+textColor=#ffffff
+BackgroundColor=#ff88ab
+layout_margintop=38dp
+layout_marginleft=142dp
+</ppt>
+<event>
+<eventItme type="clicki">
+uigo("qx.iyu")
+</eventItme>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+javags(sdk, null, "android.os.Build$VERSION", "SDK_INT")
+f(sdk &gt;= 30)
+{
+cls("android.os.Environment", cs)
+javax(o, null, cs, "isExternalStorageManager")
+f(o == true)
+{
+tw("欢迎使用")
+}
+else
+{
+javanew(it, "android.content.Intent", "String", "android.settings.MANAGE_ALL_FILES_ACCESS_PERMISSION")
+java(b, activity, "android.app.Activity.startActivity", "android.content.Intent", it)
+}
+}
+sdeg(2)
+uycl("#ff8097",true)
+</eventItme>
+<eventItme type="destroy">
+uxf(sss.xfc,"del")
+</eventItme>
+</UIEventset>
+

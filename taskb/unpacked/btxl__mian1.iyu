@@ -1,0 +1,627 @@
+<View id="4" did="0" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+BackgroundColor=#ffffe08c
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="105" did="4" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="109" did="105" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+gravity=center
+layout_margintop=64dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="110" did="109" type="CardView">
+<ppt>
+width=150dp
+height=-2
+app_CardcornerRadius=0dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#F5F5F5
+app_CardcornerRadius=25dp
+app_CardBackgroundColor=#FF2F76BD
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="113" did="110" type="Button">
+<ppt>
+width=-1
+height=-2
+text=防封
+textColor=#ffffffff
+background=through
+</ppt>
+<event>
+<eventItme type="clicki">
+f(sss.xfc==null)
+{
+s w =-2
+s h =-2
+s g ="top|left"
+uxf("null.iyu",w,h,g,sss.xfc)
+}
+else
+{
+uxf(sss.xfc,"del")
+sss xfc
+}
+</eventItme>
+</event>
+</View>
+<View id="5" did="105" type="TextView">
+<ppt>
+text=文字5
+textsize=19sp
+textColor=#ffffff
+layout_marginTop=25dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="105" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+gravity=center_horizontal
+layout_margintop=20dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="6" type="CardView">
+<ppt>
+width=-1
+height=72dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+layout_marginLeft=30dp
+layout_marginRight=30dp
+app_CardcornerRadius=10dp
+layout_gravity=center
+layout_weight=1
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=72dp
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="10" did="8" type="RadioGroup">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="12" did="10" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=越南
+textsize=11sp
+textStyle=bold
+checked=true
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(104,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="13" did="10" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=日韩
+textsize=11sp
+textStyle=bold
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(104,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="14" did="10" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=台湾
+textsize=11sp
+textStyle=bold
+textStyle=bold
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(104,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="16" did="10" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=印度
+textsize=11sp
+textStyle=bold
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(104,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="103" did="10" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=abc
+textsize=10sp
+textStyle=bold
+visibility=8
+</ppt>
+<event>
+</event>
+</View>
+<View id="96" did="8" type="RadioGroup">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="97" did="96" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=国际
+textsize=11sp
+textStyle=bold
+layout_margintop=0dp
+layout_marginleft=0dp
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(103,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="98" did="96" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=体验
+textsize=11sp
+textStyle=bold
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(103,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="99" did="96" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=轻体
+textsize=11sp
+textStyle=bold
+textStyle=bold
+textColor=#FF00AFFF
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+us(103,"checked",true)
+}
+</eventItme>
+</event>
+</View>
+<View id="104" did="96" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=abv
+textsize=10sp
+textStyle=bold
+textStyle=bold
+visibility=8
+</ppt>
+<event>
+</event>
+</View>
+<View id="39" did="105" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+layout_marginTop=20dp
+layout_marginleft=0dp
+gravity=center_horizontal
+layout_margintop=20dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="40" did="39" type="CardView">
+<ppt>
+width=-1
+height=72dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+app_CardcornerRadius=10dp
+layout_marginLeft=30dp
+layout_marginRight=30dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="75" did="40" type="LinearLayout">
+<ppt>
+width=-1
+height=72dp
+orientation=horizontal
+gravity=center_vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="100" did="75" type="RadioGroup">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+gravity=center|left
+layout_weight=1
+paddingLeft=70dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="101" did="100" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=Root
+checked=true
+textStyle=bold
+textColor=#ed0000
+textsize=9sp
+gravity=center
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(!st_iC)
+{
+endcode
+}
+ug(st_vW,"text",sss.mode)
+</eventItme>
+</event>
+</View>
+<View id="102" did="100" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=NoRoot
+textStyle=bold
+textColor=#ed0000
+textsize=9sp
+gravity=center
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(!st_iC)
+{
+endcode
+}
+ug(st_vW,"text",sss.mode)
+</eventItme>
+</event>
+</View>
+<View id="106" did="75" type="RadioGroup">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+gravity=center|left
+layout_weight=1
+paddingLeft=26dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="107" did="106" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=32bit
+textStyle=bold
+textcolor=#009600
+textsize=9sp
+checked=true
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(!st_iC)
+{
+endcode
+}
+ug(st_vW,"text",sss.bit)
+</eventItme>
+</event>
+</View>
+<View id="108" did="106" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=64bit
+textStyle=bold
+textColor=#009600
+textsize=9sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(!st_iC)
+{
+endcode
+}
+ug(st_vW,"text",sss.bit)
+</eventItme>
+</event>
+</View>
+<View id="52" did="105" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+gravity=center
+layout_marginTop=20dp
+layout_marginBottom=70dp
+layout_marginLeft=12.5dp
+layout_marginRight=12.5dp
+visibility=visible
+layout_margintop=30dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="81" did="52" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="53" did="81" type="CardView">
+<ppt>
+width=150dp
+height=45dp
+app_CardcornerRadius=0dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#F5F5F5
+app_CardcornerRadius=25dp
+app_CardBackgroundColor=#ff31454a
+</ppt>
+<event>
+</event>
+</View>
+<View id="114" did="53" type="Button">
+<ppt>
+width=-1
+height=-2
+text=开启悬浮
+textColor=#ffffffff
+background=through
+</ppt>
+<event>
+<eventItme type="clicki">
+fn fx.go()
+f(sss.xfc==null)
+{
+s w =-2
+s h =-2
+s g ="top|left"
+uxf("xf.iyu",w,h,g,sss.xfc)
+}
+else
+{
+}
+</eventItme>
+</event>
+</View>
+<View id="83" did="52" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=center
+layout_weight=1
+visibility=visible
+layout_marginTop=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="78" did="83" type="CardView">
+<ppt>
+width=150dp
+height=45dp
+app_CardcornerRadius=0dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#F5F5F5
+app_CardcornerRadius=25dp
+app_CardBackgroundColor=#ff31454a
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="115" did="78" type="Button">
+<ppt>
+width=-1
+height=-2
+text=官方卡网
+textColor=#ffffffff
+background=through
+</ppt>
+<event>
+<eventItme type="clicki">
+hws("https://916.vin//links/4C26E9C9")
+</eventItme>
+</event>
+</View>
+<View id="85" did="52" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=center
+layout_weight=1
+layout_marginLeft=5dp
+layout_marginRight=5dp
+visibility=gone
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loadingComplete">
+ushsp(false)
+java(cs,activity,"android.app.Activity.getWindow")
+java(cs2,cs,"android.view.Window.getDecorView")
+java(null,cs2,"android.view.View.setSystemUiVisibility","int","8192")
+java(null,cs,"android.view.Window.addFlags","int","67108864")
+s l="12 13 14 16 97 98 99 101 102 107 108"
+sl(l," ",l)
+for(i;l)
+{
+gvs(i,i)
+syso(i)
+}
+s iyu ="tc.iyu"
+s bln ="true"
+javanew(ss.utwv,"androidx.appcompat.app.AppCompatDialog","Context",activity)
+nvw(111,998,"相对布局","width=-1\nheight=-1",ss.载体)
+addv(ss.载体,iyu)
+java(null,ss.utwv,"android.app.Dialog.setContentView","android.view.View",ss.载体)
+java(hq,ss.utwv,"android.app.Dialog.getWindow")
+java(null,hq,"android.view.Window.setBackgroundDrawableResource","int",17170445)
+java(null,ss.utwv,"android.app.Dialog.setCancelable","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setCanceledOnTouchOutside","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setOnDismissListener",".android.content.DialogInterface$OnDismissListener",null)
+{
+}
+java(null,ss.utwv,"android.app.Dialog.show")
+</eventItme>
+<eventItme type="sensor">
+time(3,a)
+us(5,"text",a)
+</eventItme>
+<eventItme type="restart">
+fn fx.sc()
+</eventItme>
+<eventItme type="loading">
+sss ts=0
+addv(4,"分享.iyu")
+s idb="分享.25;分享.26"
+sl(idb,";",d)
+for(idc;d)
+{
+ngde(0,50,"#5E88FF|#5AA5FE|#56BDFD","#ffffff","leftright",jk)
+us(idc,"background",jk)
+us(分享.43,"background",jk)
+}
+ngde(30,"#ffffff",yu)
+us(分享.20,"background",yu)
+us(分享.19,"visibility",8)
+</eventItme>
+<eventItme type="downkey">
+ug(分享.19,"visibility",ks)
+syso(ks)
+f(ks=="0")
+{
+us(分享.19,"visibility","gone")
+}
+else
+{
+end()
+}
+</eventItme>
+<eventItme type="pause">
+fn fx.start()
+</eventItme>
+</UIEventset>
+���D�ab眥��

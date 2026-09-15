@@ -1,0 +1,463 @@
+<View id="5" did="0" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="4" did="5" type="ImageButton">
+<ppt>
+width=50dp
+height=50dp
+src=@img_2.png
+backgroundcolor=0
+scaletype=centercrop
+layout_margintop=8dp
+layout_marginleft=2dp
+</ppt>
+<event>
+<eventItme type="touchmonitor">
+f(st_eA == 2)
+{
+s-(st_rX, sss.rX, x)
+s-(st_rY, sss.rY, y)
+f(sss.rXY == true || x&gt;80 || x&lt;-80 || y&gt;80 || y&lt;-80)
+{
+sss rXY = true
+s-(40, st_rX)
+s-(80, st_rY)
+us(sss.xfc, "x", st_rX)
+us(sss.xfc, "y", st_rY)
+uxf(sss.xfc)
+}
+}
+else f(st_eA == 0)
+{
+sss rX = st_rX
+sss rY = st_rY
+sss rXY = false
+}
+</eventItme>
+<eventItme type="clicki">
+gvs(sss.xfc, sto.2, xf)
+f(sss.flags ==0)
+{
+sss flags = 1
+us(xf, "visibility", "visible")
+}
+else
+{
+sss flags = 0
+us(xf, "visibility", "gone")
+}
+ug(sss.xfc, "x", x)
+ug(sss.xfc, "y", y)
+s w = -2
+s h = -2
+s type = 0
+s gravity = "top|left"
+s format = 0
+uxf(sss.xfc, "set", x, y, w, h, type, gravity, sss.flags, format)
+</eventItme>
+</event>
+</View>
+<View id="2" did="5" type="CardView">
+<ppt>
+width=-2
+height=-2
+app_CardcornerRadius=7dp
+layout_margintop=-45dp
+layout_marginleft=60dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=vertical
+background=#FFFFA2C1
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="3" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=哔可防封 功能菜单
+textSize=16sp
+textStyle=bold
+textcolor=#000000
+layout_gravity=center_horizontal
+layout_margintop=0dp
+layout_marginleft=0dp
+gravity=center_horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="65" did="3" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="16" did="65" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=选择游戏客户端（必选）
+layout_margintop=6dp
+layout_marginleft=8dp
+textColor=#000000
+textSize=14sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="17" did="65" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+layout_marginleft=0dp
+orientation=horizontal
+layout_marginRight=6dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="18" did="17" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=全球
+textsize=12sp
+textColor=#002222
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("已选择")
+</eventItme>
+</event>
+</View>
+<View id="19" did="17" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=台湾
+textsize=12sp
+textColor=#002222
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("已选择")
+</eventItme>
+</event>
+</View>
+<View id="20" did="17" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=日韩
+textsize=12sp
+textColor=#002222
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("已选择")
+</eventItme>
+</event>
+</View>
+<View id="21" did="17" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=越南
+textsize=12sp
+textColor=#002222
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("已选择")
+</eventItme>
+</event>
+</View>
+<View id="43" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="44" did="43" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=基础防封功能（只需要选一个）
+layout_margintop=8dp
+layout_marginleft=8dp
+textColor=#000000
+textSize=14sp
+layout_marginBottom=6dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="45" did="43" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="46" did="45" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=大厅防①
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="47" did="45" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=大厅防②
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="48" did="43" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="49" did="48" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=大厅防③
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="50" did="48" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=大厅防④
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="51" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="52" did="51" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=组合防封功能（这整套得全开）
+layout_margintop=8dp
+layout_marginleft=8dp
+textColor=#000000
+textSize=14sp
+layout_marginBottom=6dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="53" did="51" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="54" did="53" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=logo页面防（必须提前开）
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="56" did="51" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="57" did="56" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=大厅防⑤（Ca内存）
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="58" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="59" did="58" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=附加防封功能
+layout_margintop=8dp
+layout_marginleft=8dp
+textColor=#000000
+textSize=14sp
+layout_marginBottom=6dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="60" did="58" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="61" did="60" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=全局离线
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="64" did="60" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=防高风险
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功")
+</eventItme>
+</event>
+</View>
+<View id="62" did="58" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="63" did="62" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=防追封（退出游戏前开）
+textColor=#000000
+textsize=14sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+tw("正在开启")
+tw("开启成功，请退出游戏")
+</eventItme>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+s a = "一块金砖;一根金条;GPU处理器;镜头;精密仪器蓝图;密码信函（黑）;生物样本;平板电脑;探测器;密码信函（白）;密码信函（红）;密码信函（黄）;密码信函（绿）;狗牌;科技部件;信号发生器;CPU处理器;净水器;汽车钥匙;笔记本;军用手表;润滑油;柴油;燃气瓶;零件袋;爱心项链;防震耳机;便携展示柜;崭新军靴;机油;怀表;粉色手枪;小钱箱;玩具匕首;指南针;老式录像带;军用水壶;便携手礼;扑克牌;明信片;罐头;杂志"
+sl(a,";",c)
+uls(48,c)
+</eventItme>
+</UIEventset>
+��		R��H@#

@@ -1,0 +1,343 @@
+<View id="4" did="0" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+app_CardElevation=8dp
+app_CardcornerRadius=15dp
+layout_margin=10dp
+layout_marginBottom=50dp
+layout_margintop=38dp
+layout_marginleft=6dp
+layout_gravity=bottom
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="4" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=bottom
+layout_gravity=bottom
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=50dp
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=邀请你试试我们的新软件产品
+textColor=#000000
+textSize=18sp
+typeface=sans
+</ppt>
+<event>
+</event>
+</View>
+<View id="9" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=1.5dp
+orientation=vertical
+background=#20000000
+</ppt>
+<event>
+</event>
+</View>
+<View id="10" did="6" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="35" did="10" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+layout_marginBottom=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="36" did="35" type="ImageView">
+<ppt>
+width=-1
+height=160dp
+src=@qzhad.png
+</ppt>
+<event>
+</event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="12" did="11" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=应用名称
+textColor=#80000000
+textSize=16sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=千纸鹤
+textColor=#000000
+textSize=15sp
+typeface=monospace
+textStyle=bold
+layout_marginLeft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="20" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+orientation=vertical
+layout_marginLeft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="21" did="20" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=详情
+textColor=#000000
+textSize=15sp
+typeface=monospace
+</ppt>
+<event>
+</event>
+</View>
+<View id="22" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-2
+orientation=vertical
+layout_margin=20dp
+layout_marginTop=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="23" did="22" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=1.改文件新大门：自动化一键注入\n2.无需ROOT权限\n3.无需手动导入OBB文件\n4.超多可选功能
+</ppt>
+<event>
+</event>
+</View>
+<View id="24" did="6" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=horizontal
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="26" did="25" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=38dp
+layout_margin=10dp
+app_CardcornerRadius=19dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="27" did="26" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+background=#30000000
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="33" did="27" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+layout_margin=1dp
+app_CardcornerRadius=18dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="34" did="33" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+<eventItme type="press">
+</eventItme>
+<eventItme type="clicki">
+java(null,ss.utwv,"android.app.Dialog.dismiss")
+</eventItme>
+</event>
+</View>
+<View id="28" did="34" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=以后再说
+textColor=#ffff75a0
+textSize=15sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="29" did="24" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+layout_weight=1
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="30" did="29" type="CardView">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=38dp
+layout_margin=10dp
+app_CardcornerRadius=19dp
+app_CardElevation=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="31" did="30" type="LinearLayout">
+<ppt>
+width=-1
+ps=爱源码:www.2ym.cn
+height=-1
+orientation=vertical
+background=#ffff78ab
+gravity=center
+</ppt>
+<event>
+<eventItme type="clicki">
+hws("https://www.123pan.com/s/4m9Tjv-vzp4.html")
+end("qzhtc.iyu")
+</eventItme>
+</event>
+</View>
+<View id="32" did="31" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=前往下载
+textColor=#FFFFFF
+textSize=15sp
+typeface=monospace
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+uycl("#000000",false,0)
+sss j =true
+f(sss.j==true)
+{
+t()
+{
+ufnsui()
+{
+swh("pxh",huj)
+us(4,"visibility","visible")
+dht(scf,0,0,huj,0)
+dh(scf,"duration",500)
+us(4,"dh",scf)
+}
+stop(200)
+ufnsui()
+{
+t()
+{
+dha(dh, false, true)
+dh(dh, "duration", 300)
+ufnsui()
+{
+us(2,"visibility",0)
+us(2, "dh", dh)
+sss j =false
+}
+}
+}
+}
+}
+</eventItme>
+</UIEventset>
+�C��2�f�#VP6

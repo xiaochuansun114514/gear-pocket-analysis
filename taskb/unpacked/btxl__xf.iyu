@@ -1,0 +1,2654 @@
+<View id="5" did="0" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="4" did="5" type="ImageView">
+<ppt>
+width=45dp
+height=45dp
+src=@xficon.png
+backgroundcolor=0
+scaletype=centercrop
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+<eventItme type="touchmonitor">
+f(st_eA == 2)
+{
+s-(st_rX, sss.rX, x)
+s-(st_rY, sss.rY, y)
+f(sss.rXY == true || x&gt;80 || x&lt;-80 || y&gt;80 || y&lt;-80)
+{
+sss rXY = true
+s-(40, st_rX)
+s-(80, st_rY)
+us(sss.xfc, "x", st_rX)
+us(sss.xfc, "y", st_rY)
+uxf(sss.xfc)
+}
+}
+else f(st_eA == 0)
+{
+sss rX = st_rX
+sss rY = st_rY
+sss rXY = false
+}
+</eventItme>
+<eventItme type="clicki">
+gvs(sss.xfc, xf.2, xf)
+f(sss.flags ==0)
+{
+sss flags = 1
+us(xf, "visibility", "visible")
+}
+else
+{
+sss flags = 0
+us(xf, "visibility", "gone")
+}
+ug(sss.xfc, "x", x)
+ug(sss.xfc, "y", y)
+s w = -2
+s h = -2
+s type = 0
+s gravity = "top|left"
+s format = 0
+uxf(sss.xfc, "set", x, y, w, h, type, gravity, sss.flags, format)
+uzd(a, 500)
+</eventItme>
+</event>
+</View>
+<View id="2" did="5" type="CardView">
+<ppt>
+width=-2
+height=-2
+app_CardcornerRadius=7dp
+layout_margin=5dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=vertical
+background=#FFffccaa
+</ppt>
+<event>
+</event>
+</View>
+<View id="232" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="232" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=冰糖雪梨
+textcolor=#111111
+textSize=16sp
+textStyle=bold
+layout_gravity=center_horizontal
+gravity=center_vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="75" did="3" type="ScrollView">
+<ppt>
+width=380dp
+height=260dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="76" did="75" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="233" did="76" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+layout_margintop=2dp
+layout_marginleft=0dp
+layout_margin=5dp
+BackgroundColor=#88Ffac80
+visibility=visible
+</ppt>
+<event>
+<eventItme type="press">
+us(233,"visibility","gone")
+</eventItme>
+</event>
+</View>
+<View id="234" did="233" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=别天天躲着打飞机啦，陪你去看风雨后的六合彩霞吧
+textColor=#121212
+textSize=10sp
+layout_marginLeft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="76" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+layout_margintop=2dp
+layout_marginleft=0dp
+layout_margin=5dp
+BackgroundColor=#88FFac80
+</ppt>
+<event>
+</event>
+</View>
+<View id="142" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="11" did="142" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=绘制功能
+textColor=#00ac00
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+fc("@r.mp3","%r.mp3",b)
+s music="%r.mp3"
+bfm(music,sss.bbb)
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="216" did="142" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=录屏时屏蔽绘制
+textSize=12sp
+textColor=#006b00
+</ppt>
+<event>
+</event>
+</View>
+<View id="178" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="132" did="178" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="12" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=血量
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="14" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=昵称
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="15" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=方框
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="17" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=射线
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="18" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=队伍
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="279" did="132" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=国籍
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="133" did="178" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="19" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=骨骼
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="20" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=手持
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="21" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=雷达
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="61" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=预警
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="62" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=60
+text=距离
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="280" did="133" type="CheckBox">
+<ppt>
+width=-2
+height=60
+text=背敌
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="191" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="192" did="191" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=物资选项
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="193" did="191" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=武器
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="194" did="191" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=药品
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="196" did="191" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=配件
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="197" did="191" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=防具
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="278" did="191" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=子弹
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="257" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="258" did="257" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=载具选项
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="259" did="257" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=名称
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="260" did="257" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=耐久
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="261" did="257" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=油量
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="262" did="257" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=距离
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="251" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="252" did="251" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=物资绘制视图
+textSize=12sp
+textColor=#333333
+layout_gravity=center_vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="253" did="251" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="254" did="253" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=文本
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="255" did="253" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=图标
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="256" did="253" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=文本和图标
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="198" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="199" did="198" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=绘制刷新率
+textSize=12sp
+textColor=#333333
+layout_gravity=center_vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="201" did="198" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="202" did="201" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=30帧
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="203" did="201" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=60帧
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="204" did="201" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=90帧
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="205" did="201" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=极限
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="235" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="236" did="235" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=绘制玩家颜色
+textSize=12sp
+textColor=#333333
+layout_gravity=center_vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="237" did="235" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="238" did="237" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=白
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="239" did="237" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=红
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="240" did="237" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=黄
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="241" did="237" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=绿
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="249" did="237" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=蓝
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="242" did="7" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+orientation=horizontal
+layout_marginLeft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="243" did="242" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=绘制人机颜色
+textSize=12sp
+textColor=#333333
+layout_gravity=center_vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="244" did="242" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="245" did="244" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=白
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="246" did="244" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=红
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="247" did="244" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=黄
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="248" did="244" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=绿
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="250" did="244" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=蓝
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="163" did="76" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+layout_margintop=0dp
+layout_marginleft=0dp
+layout_margin=5dp
+BackgroundColor=#88FFac80
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="141" did="163" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="79" did="141" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=枪械自瞄
+textColor=#ce0000
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="272" did="141" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=预判
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="177" did="163" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="143" did="177" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="96" did="143" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=自瞄模式
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="94" did="143" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="95" did="94" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=驱动
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="97" did="94" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=触摸
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="86" did="143" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=提示：参数配置仅对触摸模式生效
+textcolor=#222222
+textsize=10sp
+layout_marginleft=8dp
+layout_gravity=center
+layout_marginLeft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="263" did="177" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="264" did="263" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=忽略对象
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="269" did="263" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=人机
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="270" did="263" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=倒地
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="271" did="263" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=障碍后的敌人
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="144" did="177" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="119" did="144" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=锁定目标偏好
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="120" did="144" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="121" did="120" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=距离最近
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="122" did="120" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=靠近准心
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="179" did="177" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="180" did="179" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=锁定人体部位
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="181" did="179" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="182" did="181" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=头部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="183" did="181" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=胸部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="184" did="181" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=臀部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="85" did="163" type="RelativeLayout">
+<ppt>
+width=-2
+height=-2
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="145" did="85" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="51" did="145" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=自瞄范围
+textsize=12sp
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="52" did="145" type="SeekBar">
+<ppt>
+width=200dp
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="146" did="85" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+ut_below=145
+</ppt>
+<event>
+</event>
+</View>
+<View id="147" did="146" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=滑动速度
+textsize=12sp
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="148" did="146" type="SeekBar">
+<ppt>
+width=200dp
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="149" did="85" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+ut_below=146
+</ppt>
+<event>
+</event>
+</View>
+<View id="150" did="149" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=压枪幅度
+textsize=12sp
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="151" did="149" type="SeekBar">
+<ppt>
+width=200dp
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="134" did="163" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="164" did="76" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+layout_margintop=0dp
+layout_marginleft=0dp
+layout_margin=5dp
+BackgroundColor=#88FFac80
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="153" did="164" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="101" did="153" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=子弹追踪
+textColor=#ce0000
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="157" did="153" type="LinearLayout">
+<ppt>
+width=-2
+height=-1
+orientation=horizontal
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="113" did="157" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=视角追踪
+textcolor=#222222
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="273" did="164" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="274" did="273" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=忽略对象
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="275" did="273" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=人机
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="276" did="273" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=倒地
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="277" did="273" type="CheckBox">
+<ppt>
+width=-2
+height=-2
+text=障碍后的敌人
+textColor=#222222
+textSize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="206" did="164" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="207" did="206" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=锁定目标偏好
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="208" did="206" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="209" did="208" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=距离最近
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="210" did="208" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=靠近准心
+textSize=12sp
+textColor=#222222
+layout_margintop=-32dp
+layout_marginleft=86dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="152" did="164" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="118" did="152" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=锁定人体部位
+textSize=12sp
+textColor=#333333
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="114" did="152" type="RadioGroup">
+<ppt>
+width=-2
+height=-1
+gravity=center
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="115" did="114" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=头部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="116" did="114" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=胸部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="117" did="114" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=臀部
+textSize=12sp
+textColor=#222222
+</ppt>
+<event>
+</event>
+</View>
+<View id="156" did="164" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_marginleft=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="106" did="156" type="TextView">
+<ppt>
+width=-2
+height=-1
+text=追踪范围
+textsize=12sp
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="107" did="156" type="SeekBar">
+<ppt>
+width=200dp
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="167" did="76" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+layout_margintop=0dp
+layout_marginleft=0dp
+layout_margin=5dp
+BackgroundColor=#88FFac80
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="176" did="167" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="154" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="29" did="154" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=头部范围
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="155" did="154" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=天空变黑
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="158" did="154" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物变黑
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="159" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="161" did="159" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=子弹聚点
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+layout_marginleft=8dp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="162" did="159" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=枪无后座
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="160" did="159" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物加速
+textColor=#000000
+textsize=12sp
+layout_margintop=5dp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="168" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+layout_margintop=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="169" did="168" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=二倍视野
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="170" did="168" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=枪械防抖
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="171" did="168" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物飞天
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="172" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="173" did="172" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=射速加强
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="174" did="172" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=枪械变大
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="175" did="172" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物跳远
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="212" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="213" did="212" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=命中特效
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="214" did="212" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=全图除草
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="215" did="212" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物变大
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="217" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="218" did="217" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=探头路飞
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="219" did="217" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=全图除树
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="220" did="217" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物畸形
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="281" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="282" did="281" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=原地旋转
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="283" did="281" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=全图除雾
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="284" did="281" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=人物穿墙
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="221" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="222" did="221" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=无限子弹
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="223" did="221" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=全图除烟
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="224" did="221" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=踏空高跳
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="310" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="311" did="310" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=七彩描边
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="312" did="310" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=弩箭穿墙
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="313" did="310" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=灵魂瞬移
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="314" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="315" did="314" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=载具锁油
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="316" did="314" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=载具飞天
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="317" did="314" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=载具加速
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="318" did="176" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="319" did="318" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=子弹穿墙
+textColor=#000000
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="320" did="318" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=七彩毒圈
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="321" did="318" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=攀爬穿墙
+textColor=#000000
+layout_margintop=5dp
+textsize=12sp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="165" did="167" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="47" did="165" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+text=物资修改
+layout_margintop=5dp
+layout_marginleft=8dp
+textsize=12sp
+layout_marginBottom=5dp
+textcolor=#0000cc
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+</eventItme>
+<eventItme type="oncheckedchanged">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(st_iC)
+{
+fn fx.o("开启")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="50" did="165" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=选择物资
+textSize=12sp
+layout_margintop=0dp
+layout_marginleft=0dp
+layout_gravity=center_vertical
+textColor=#555555
+</ppt>
+<event>
+</event>
+</View>
+<View id="48" did="165" type="Spinner">
+<ppt>
+width=-2
+height=-2
+layout_margintop=4dp
+layout_marginleft=6dp
+layout_gravity=center_vertical
+background=white
+</ppt>
+<event>
+</event>
+</View>
+<View id="88" did="167" type="RadioGroup">
+<ppt>
+width=-2
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="89" did="88" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=绷带
+textsize=12sp
+textcolor=#111111
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="90" did="88" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=5.56mm
+textcolor=#111111
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="91" did="88" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=7.62mm
+textcolor=#111111
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="92" did="88" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=变卖物
+textcolor=#111111
+textsize=12sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="166" did="167" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=horizontal
+</ppt>
+<event>
+</event>
+</View>
+<View id="57" did="166" type="ImageView">
+<ppt>
+width=20dp
+height=20dp
+src=@met.png
+layout_marginleft=5dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="58" did="166" type="TextView">
+<ppt>
+width=-2
+height=-2
+textcolor=#ff0000
+textsize=8sp
+text=请先在训练场开启绘制检查是否生效，如果无效请检查是否授权ROOT权限或配置框架环境，以及游戏和位数是否选择正确
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+s a = "一块金砖;一根金条;GPU处理器;镜头;精密仪器蓝图;密码信函（黑）;生物样本;平板电脑;探测器;密码信函（白）;密码信函（红）;密码信函（黄）;密码信函（绿）;狗牌;科技部件;信号发生器;CPU处理器;净水器;汽车钥匙;笔记本;军用手表;润滑油;柴油;燃气瓶;零件袋;爱心项链;防震耳机;便携展示柜;崭新军靴;机油;怀表;粉色手枪;小钱箱;玩具匕首;指南针;老式录像带;军用水壶;便携手礼;扑克牌;明信片;罐头;杂志"
+sl(a,";",c)
+uls(48,c)
+ushsp(true)
+s a = "@o.mp3"
+fc("@o.mp3","%o.mp3",a)
+</eventItme>
+</UIEventset>
+2�[

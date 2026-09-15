@@ -1,0 +1,472 @@
+<View id="2" did="0" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+BackgroundColor=#ff99aa
+</ppt>
+<event>
+</event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=高级权限配置
+textColor=#ffffff
+layout_margin=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="82" did="0" type="ScrollView">
+<ppt>
+width=-1
+height=-1
+background=@1688810379259.png
+</ppt>
+<event>
+</event>
+</View>
+<View id="1" did="82" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="4" did="1" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="5" did="4" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+app_CardcornerRadius=10dp
+layout_gravity=center
+layout_weight=1
+layout_margintop=20dp
+layout_marginleft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>
+width=-1
+height=60dp
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="59" did="6" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="9" did="59" type="Button">
+<ppt>
+width=60dp
+height=40dp
+text=授权
+BackgroundColor=#ff8899
+textColor=#ffffff
+ut_alignParentRight=true
+ut_centerVertical=true
+layout_marginRight=10dp
+</ppt>
+<event>
+<eventItme type="clicki">
+call(null,"mjava","cd.getAppDetailSettingIntent",activity)
+</eventItme>
+</event>
+</View>
+<View id="60" did="59" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="60" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=基础权限配置
+textColor=#000000
+textsize=16sp
+layout_margintop=10dp
+layout_marginleft=40dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="60" type="TextView">
+<ppt>
+width=-2
+height=-2
+textsize=12sp
+text=应用于提供基础服务
+layout_margintop=3dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="42" did="60" type="ImageView">
+<ppt>
+width=24dp
+height=24dp
+src=@1692334412846.png
+layout_margintop=-42dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="22" did="4" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+app_CardcornerRadius=10dp
+layout_gravity=center
+layout_weight=1
+layout_margintop=20dp
+layout_marginleft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="23" did="22" type="LinearLayout">
+<ppt>
+width=-1
+height=60dp
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="61" did="23" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="62" did="61" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="24" did="62" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=显示在其他应用上方
+textColor=#000000
+textsize=16sp
+layout_margintop=10dp
+layout_marginleft=40dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="25" did="62" type="TextView">
+<ppt>
+width=-2
+height=-2
+textsize=12sp
+text=应用于功能菜单悬浮窗正常显示
+layout_margintop=3dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="43" did="62" type="ImageView">
+<ppt>
+width=24dp
+height=24dp
+src=@1692334472054.png
+layout_margintop=-42dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="26" did="61" type="Button">
+<ppt>
+width=60dp
+height=40dp
+text=授权
+BackgroundColor=#ff8899
+textColor=#ffffff
+ut_alignParentRight=true
+ut_centerVertical=true
+layout_marginRight=10dp
+</ppt>
+<event>
+<eventItme type="clicki">
+java(xsg,null,"android.provider.Settings.canDrawOverlays","android.content.Context",activity)
+f(xsg==false)
+{
+sit(a, "action", "android.intent.action.VIEW")
+sit(a, "action", "android.settings.action.MANAGE_OVERLAY_PERMISSION")
+cls("android.content.ContextWrapper",类)
+javax(one,activity,类,"getPackageName")
+ss("package:"+one,pk)
+sit(a, "data", pk)
+uit(a, "chooser", "设置悬浮窗权限")
+}
+else
+{
+}
+tw("已发起申请，请自行同意授权")
+</eventItme>
+</event>
+</View>
+<View id="32" did="4" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+app_CardcornerRadius=10dp
+layout_gravity=center
+layout_weight=1
+layout_margintop=20dp
+layout_marginleft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="33" did="32" type="LinearLayout">
+<ppt>
+width=-1
+height=60dp
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="65" did="33" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="36" did="65" type="Button">
+<ppt>
+width=60dp
+height=40dp
+text=授权
+BackgroundColor=#ff8899
+textColor=#ffffff
+ut_alignParentRight=true
+ut_centerVertical=true
+layout_marginRight=10dp
+</ppt>
+<event>
+<eventItme type="clicki">
+s bool = true
+call(null,"mjava","cd.addWhiteList2",activity,bool)
+tw("已发起申请，请自行同意授权")
+</eventItme>
+</event>
+</View>
+<View id="66" did="65" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="34" did="66" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=电池优化白名单
+textColor=#000000
+textsize=16sp
+layout_margintop=10dp
+layout_marginleft=40dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="35" did="66" type="TextView">
+<ppt>
+width=-2
+height=-2
+textsize=12sp
+text=选择无限制模式，有效防止进程被系统清理
+layout_margintop=3dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="45" did="66" type="ImageView">
+<ppt>
+width=24dp
+height=24dp
+src=@1692334750910.png
+layout_margintop=-42dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="53" did="4" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardElevation=0dp
+app_CardBackgroundColor=#ffffff
+app_CardcornerRadius=8dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+app_CardcornerRadius=10dp
+layout_gravity=center
+layout_weight=1
+layout_margintop=20dp
+layout_marginleft=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="54" did="53" type="LinearLayout">
+<ppt>
+width=-1
+height=60dp
+orientation=vertical
+layout_margin=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="71" did="54" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+</ppt>
+<event>
+</event>
+</View>
+<View id="73" did="71" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="55" did="73" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=ROOT
+textColor=#ec0000
+textsize=16sp
+layout_margintop=10dp
+layout_marginleft=40dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="56" did="73" type="TextView">
+<ppt>
+width=-2
+height=-2
+textsize=12sp
+text=应用于读写游戏内存（框架用户无需操作）
+layout_margintop=3dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="58" did="73" type="ImageView">
+<ppt>
+width=24dp
+height=24dp
+src=@1692335055302.png
+layout_margintop=-42dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="57" did="71" type="Button">
+<ppt>
+width=60dp
+height=40dp
+text=授权
+BackgroundColor=#ff8899
+textColor=#ffffff
+ut_alignParentRight=true
+ut_centerVertical=true
+layout_marginRight=10dp
+</ppt>
+<event>
+<eventItme type="clicki">
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+tw("已发起申请，请自行同意授权")
+</eventItme>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+uycl("#ff8097",true)
+sdeg(2)
+ngde(15,"#ff8899",背景)
+s list="9 26 31 36 41 51 57 77"
+sl(list," ",l)
+for(i;l)
+{
+us(i,"background",背景)
+}
+</eventItme>
+</UIEventset>
+\�jG�w*�
+��H�

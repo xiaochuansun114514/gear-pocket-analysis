@@ -1,0 +1,471 @@
+<View id="30" did="0" type="LinearLayout">
+<ppt>
+width=-2
+height=-2
+BackgroundColor=#ffa2c6
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="5" did="0" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+background=@b3.png
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="11" did="5" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+layout_margintop=290dp
+layout_marginleft=183dp
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+ug(11,"checked",zt)
+s w =-2
+s h =-2
+s g ="top|left"
+f(zt==true)
+{
+uxf("null.iyu",w,h,g,sss.xfc)
+gvs(sss.xfc, null.48, lb)
+s a = "一块金砖;一根金条;GPU处理器;镜头;精密仪器蓝图;密码信函（黑）;生物样本;平板电脑;探测器;密码信函（白）;密码信函（红）;密码信函（黄）;密码信函（绿）;狗牌;科技部件;信号发生器;CPU处理器;净水器;汽车钥匙;笔记本;军用手表;润滑油;柴油;燃气瓶;零件袋;爱心项链;防震耳机;便携展示柜;崭新军靴;机油;怀表;粉色手枪;小钱箱;玩具匕首;指南针;老式录像带;军用水壶;便携手礼;扑克牌;明信片;罐头;杂志"
+sl(a,";",c)
+uls(lb,c)
+}
+else
+{
+uxf(sss.xfc,"del")
+}
+</eventItme>
+</event>
+</View>
+<View id="32" did="5" type="RelativeLayout">
+<ppt>
+width=-1
+height=160
+BackgroundColor=#ff98bb
+</ppt>
+<event>
+</event>
+</View>
+<View id="35" did="32" type="ImageView">
+<ppt>
+width=46dp
+height=46dp
+src=@ic_launcher.png
+layout_margintop=6dp
+layout_marginleft=7dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="34" did="32" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=齿轮辅助
+textColor=#000000
+textStyle=bold
+textSize=16sp
+layout_margintop=20dp
+layout_marginleft=66dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="74" did="32" type="ImageButton">
+<ppt>
+width=80dp
+height=80dp
+background=through
+src=@1680969710913.png
+layout_margintop=-14dp
+layout_marginleft=338dp
+</ppt>
+<event>
+<eventItme type="clicki">
+hw("http://gchat.qpic.cn/gchatpic_new/2785687263/3563891951-0-92094660719EAE7ADBA30D0997CDD794/0?term=2")
+</eventItme>
+</event>
+</View>
+<View id="33" did="5" type="ImageButton">
+<ppt>
+width=-2
+height=-2
+src=@k2.png
+background=through
+layout_margintop=309dp
+layout_marginleft=251dp
+</ppt>
+<event>
+<eventItme type="clicki">
+utw(欢迎使用,"齿轮辅助","正在申请ROOT权限，请允许授权","我知道了",false,v)
+{
+tw("你只管操作，剩下的交给我")
+}
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+f(sss.v == null)
+{
+s w = -2
+s h = -2
+s gravity = "top|left"
+uxf("@6b64a2f64.png", w, h, gravity, sss.v)
+}
+</eventItme>
+</event>
+</View>
+<View id="36" did="5" type="RelativeLayout">
+<ppt>
+width=-1
+height=200dp
+layout_margintop=60dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="38" did="36" type="VideoView">
+<ppt>
+width=-1dp
+height=-1dp
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="39" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=悬浮窗
+textcolor=#000000
+layout_margintop=294dp
+layout_marginleft=140dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="40" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=录屏时屏蔽绘制
+textColor=#008000
+layout_margintop=294dp
+layout_marginleft=230dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="41" did="5" type="SwitchCompat">
+<ppt>
+width=-2
+height=-2
+layout_margintop=290dp
+layout_marginleft=330dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="42" did="5" type="ImageView">
+<ppt>
+width=30dp
+height=30dp
+src=@c6r.png
+layout_margintop=333dp
+layout_marginleft=16dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="43" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=游戏选择
+textSize=16sp
+layout_margintop=336dp
+layout_marginleft=60dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="44" did="5" type="RadioGroup">
+<ppt>
+width=340dp
+height=75dp
+layout_margintop=372dp
+layout_marginleft=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="45" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=和平精英
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="51" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=PUBGM GL
+layout_margintop=-32dp
+layout_marginleft=110dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="52" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=PUBGM  KR
+layout_margintop=-32dp
+layout_marginleft=220dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="56" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=PUBGM TW
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="57" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=PUBGM VN
+layout_margintop=-32dp
+layout_marginleft=110dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="58" did="44" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=PUBGM IN
+layout_margintop=-32dp
+layout_marginleft=220dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="59" did="5" type="ImageView">
+<ppt>
+width=30dp
+height=30dp
+src=@m8m.png
+layout_margintop=441dp
+layout_marginleft=16dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="60" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=游戏位数选择
+textsize=16sp
+layout_margintop=446dp
+layout_marginleft=60dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="61" did="5" type="RadioGroup">
+<ppt>
+width=200dp
+height=40dp
+layout_margintop=441dp
+layout_marginleft=167dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="62" did="61" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=32bit
+</ppt>
+<event>
+</event>
+</View>
+<View id="63" did="61" type="RadioButton">
+<ppt>
+width=-2
+height=-2
+text=64bit
+layout_margintop=-32dp
+layout_marginleft=80dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="64" did="5" type="Button">
+<ppt>
+width=105dp
+height=40dp
+text=重置游客账户
+textcolor=#FFFFFF
+BackgroundColor=#FFBBC2
+layout_margintop=480dp
+layout_marginleft=18dp
+</ppt>
+<event>
+<eventItme type="clicki">
+tw("设置成功")
+</eventItme>
+</event>
+</View>
+<View id="65" did="5" type="Button">
+<ppt>
+width=105dp
+height=40dp
+text=画质帧率解锁
+textcolor=#FFFFFF
+BackgroundColor=#FFBBC2
+layout_margintop=480dp
+layout_marginleft=132dp
+</ppt>
+<event>
+<eventItme type="clicki">
+tw("设置成功")
+</eventItme>
+</event>
+</View>
+<View id="66" did="5" type="Button">
+<ppt>
+width=105dp
+height=40dp
+text=修复游戏崩溃
+textcolor=#FFFFFF
+BackgroundColor=#FFBBC2
+layout_margintop=480dp
+layout_marginleft=246dp
+</ppt>
+<event>
+<eventItme type="clicki">
+tw("设置成功")
+</eventItme>
+</event>
+</View>
+<View id="67" did="5" type="CardView">
+<ppt>
+width=300
+height=120
+layout_margintop=323dp
+layout_marginleft=132dp
+app_CardcornerRadius=10dp
+app_CardBackgroundColor=#BBffb7dd
+</ppt>
+<event>
+</event>
+</View>
+<View id="68" did="67" type="Button">
+<ppt>
+width=-1
+height=-1
+text=配置哔可防封
+BackgroundColor=#16e2e2e2
+</ppt>
+<event>
+<eventItme type="clicki">
+uapp("com.huage.pink.fangfeng", c)
+f(c==true)
+{
+tw("正在跳转哔可防封，请自行配置")
+}
+else
+{
+tw("检测到未安装哔可防封，如果不安装容易导致账号封禁")
+}
+</eventItme>
+</event>
+</View>
+<View id="69" did="5" type="ImageButton">
+<ppt>
+width=-2
+height=-2
+src=@startgame.png
+background=through
+layout_margintop=258dp
+layout_marginleft=5dp
+</ppt>
+<event>
+<eventItme type="clicki">
+uapp("com.tencent.ig", c)
+f(c==true)
+{
+tw("正在打开PUBG MOBILE")
+}
+else
+{
+tw("啥比，你还没有安装PUBG MOBILE")
+}
+</eventItme>
+</event>
+</View>
+<View id="72" did="5" type="ImageView">
+<ppt>
+width=15dp
+height=15dp
+src=@met.png
+layout_margintop=529dp
+layout_marginleft=14dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="73" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+textSize=10sp
+textColor=#FF0000
+text=本程序依赖于ROOT环境或虚拟容器内运行，如果未正常配置则无法正常使用！
+layout_margintop=530dp
+layout_marginleft=33dp
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+fc("@video.mp4","%video.mp4",a)
+bfvs(38,"%video.mp4")
+bfvss(38,"media",c)
+bfvss(38,"st")
+</eventItme>
+<eventItme type="destroy">
+uxf(sss.xfc,"del")
+</eventItme>
+</UIEventset>
+����

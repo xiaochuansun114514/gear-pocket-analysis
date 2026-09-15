@@ -1,0 +1,65 @@
+<View id="5" did="0" type="CardView">
+<ppt>
+width=300dp
+height=-2
+app_CardcornerRadius=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="6" type="RelativeLayout">
+<ppt>
+width=-1
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=温馨提示（点击空白处关闭弹窗）
+textSize=15sp
+textStyle=bold
+textColor=#ff292929
+ut_alignParentTop=true
+layout_marginTop=20dp
+ut_alignParentLeft=true
+layout_marginLeft=15dp
+layout_marginBottom=8dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=冰糖雪梨现在只需要完成15次分享任务即可使用！完全不会进行收费｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡\n分享条件：\n1.必须分享至100人以上的QQ群\n2.不能取消分享\n3.不能分享至相同的群聊\n4.每次分享间隔3秒\n触犯以上规则将闪退清空次数，请悉知。
+ut_below=8
+textSize=12sp
+layout_marginLeft=15dp
+layout_marginRight=15dp
+textcolor=#121212
+layout_marginBottom=15dp
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+</eventItme>
+<eventItme type="loadingComplete">
+</eventItme>
+</UIEventset>
+�qV�p��h��

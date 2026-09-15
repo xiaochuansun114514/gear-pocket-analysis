@@ -1,0 +1,333 @@
+<View id="5" did="0" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=horizontal
+background=through
+</ppt>
+<event>
+</event>
+</View>
+<View id="203" did="5" type="ImageView">
+<ppt>
+width=25dp
+height=25dp
+src=@n.png
+visibility=8
+</ppt>
+<event>
+<eventItme type="clicki">
+gvs(sss.xfc, null.2, xf)
+gvs(sss.xfc, null.203, xf2)
+us(xf2, "visibility", 8)
+us(xf, "visibility", 0)
+ug(sss.xfc, "x", x)
+ug(sss.xfc, "y", y)
+sss flags = 1
+s w = -2
+s h = -2
+s type = 0
+s gravity = "top|left"
+s format = 0
+uxf(sss.xfc, "set", x, y, w, h, type, gravity, sss.flags, format)
+</eventItme>
+<eventItme type="touchmonitor">
+f(st_eA == 2)
+{
+s-(st_rX, sss.rX, x)
+s-(st_rY, sss.rY, y)
+f(sss.rXY == true || x&gt;80 || x&lt;-80 || y&gt;80 || y&lt;-80)
+{
+sss rXY = true
+s-(40, st_rX)
+s-(80, st_rY)
+us(sss.xfc, "x", st_rX)
+us(sss.xfc, "y", st_rY)
+uxf(sss.xfc)
+}
+}
+else f(st_eA == 0)
+{
+sss rX = st_rX
+sss rY = st_rY
+sss rXY = false
+}
+</eventItme>
+</event>
+</View>
+<View id="2" did="5" type="CardView">
+<ppt>
+width=200dp
+height=-2
+app_CardcornerRadius=11dp
+app_CardBackgroundColor=#FF038F81
+app_CardprEventcornerOverlap=false
+</ppt>
+<event>
+</event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+background=through
+</ppt>
+<event>
+</event>
+</View>
+<View id="182" did="3" type="RelativeLayout">
+<ppt>
+width=-1
+height=-2
+</ppt>
+<event>
+</event>
+</View>
+<View id="205" did="182" type="RelativeLayout">
+<ppt>
+width=-1
+height=30dp
+</ppt>
+<event>
+<eventItme type="clicki">
+syso(1)
+</eventItme>
+<eventItme type="touchmonitor">
+f(st_eA == 2)
+{
+s-(st_rX, sss.rX, x)
+s-(st_rY, sss.rY, y)
+f(sss.rXY == true || x&gt;80 || x&lt;-80 || y&gt;80 || y&lt;-80)
+{
+sss rXY = true
+s-(40, st_rX)
+s-(80, st_rY)
+us(sss.xfc, "x", st_rX)
+us(sss.xfc, "y", st_rY)
+uxf(sss.xfc)
+}
+}
+else f(st_eA == 0)
+{
+sss rX = st_rX
+sss rY = st_rY
+sss rXY = false
+}
+</eventItme>
+</event>
+</View>
+<View id="183" did="182" type="ImageView">
+<ppt>
+width=30dp
+height=30dp
+src=@p.png
+</ppt>
+<event>
+<eventItme type="clicki">
+gvs(sss.xfc, null.2, xf)
+gvs(sss.xfc, null.203, xf2)
+us(xf2, "visibility", 0)
+us(xf, "visibility", 8)
+ug(sss.xfc, "x", x)
+ug(sss.xfc, "y", y)
+sss flags =  0
+s w = -2
+s h = -2
+s type = 0
+s gravity = "top|left"
+s format = 0
+uxf(sss.xfc, "set", x, y, w, h, type, gravity, sss.flags, format)
+</eventItme>
+</event>
+</View>
+<View id="186" did="182" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=防封✓
+textColor=#FF00FF00
+ut_centerInParent=true
+</ppt>
+<event>
+</event>
+</View>
+<View id="187" did="182" type="ImageView">
+<ppt>
+width=30dp
+height=30dp
+src=@j.png
+ut_alignParentRight=true
+</ppt>
+<event>
+<eventItme type="clicki">
+uxf(sss.xfc,"del")
+</eventItme>
+</event>
+</View>
+<View id="204" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=5dp
+BackgroundColor=#FF038F81
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="189" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=2dp
+BackgroundColor=#ff000000
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="188" did="3" type="LinearLayout">
+<ppt>
+width=-1
+height=5dp
+BackgroundColor=#FF038F81
+orientation=vertical
+</ppt>
+<event>
+</event>
+</View>
+<View id="190" did="3" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardBackgroundColor=#FF851B1F
+app_CardcornerRadius=10dp
+clipChildren=false
+</ppt>
+<event>
+</event>
+</View>
+<View id="191" did="190" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+orientation=vertical
+padding=5dp
+paddingBottom=10dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="196" did="191" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=防封支持64位国际、越南、日韩、台湾服
+textColor=#FFB6CEF6
+textStyle=bold
+textSize=11sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="197" did="191" type="SwitchCompat">
+<ppt>
+width=-1
+height=-2
+text=Logo界面64位防封
+textColor=#FFE6E45E
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="198" did="191" type="SwitchCompat">
+<ppt>
+width=-1
+height=-2
+text=Logo界面防封②
+textColor=#FFE6E45E
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="199" did="191" type="SwitchCompat">
+<ppt>
+width=-1
+height=-2
+text=Logo界面防封③
+textColor=#FFE6E45E
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="201" did="191" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=防封三选一，多开可能禁网，建议单开自瞄少打人机，子追和内存功能容易封号。
+textColor=#FFB6CEF6
+textStyle=bold
+textSize=11sp
+</ppt>
+<event>
+</event>
+</View>
+<View id="200" did="191" type="SwitchCompat">
+<ppt>
+width=-1
+height=-2
+text=全局离线
+textColor=#FFE6E45E
+</ppt>
+<event>
+<eventItme type="oncheckedchanged">
+f(st_iC)
+{
+fn fx.o("开启防封")
+us(st_vW,"checked",false)
+}
+</eventItme>
+</event>
+</View>
+<View id="202" did="191" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=局内开启 其他界面开启无效 可能会闪退
+textColor=#FFB6CEF6
+textStyle=bold
+textSize=11sp
+layout_marginBottom=50dp
+</ppt>
+<event>
+</event>
+</View>
+<UIEventset>
+<eventItme type="loading">
+s a = "一块金砖;一根金条;GPU处理器;镜头;精密仪器蓝图;密码信函（黑）;生物样本;平板电脑;探测器;密码信函（白）;密码信函（红）;密码信函（黄）;密码信函（绿）;狗牌;科技部件;信号发生器;CPU处理器;净水器;汽车钥匙;笔记本;军用手表;润滑油;柴油;燃气瓶;零件袋;爱心项链;防震耳机;便携展示柜;崭新军靴;机油;怀表;粉色手枪;小钱箱;玩具匕首;指南针;老式录像带;军用水壶;便携手礼;扑克牌;明信片;罐头;杂志"
+sl(a,";",c)
+uls(48,c)
+ushsp(true)
+</eventItme>
+</UIEventset>
+~b'�˪��;

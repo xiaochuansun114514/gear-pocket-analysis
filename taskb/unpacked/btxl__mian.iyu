@@ -1,0 +1,233 @@
+<View id="4" did="0" type="RelativeLayout">
+<ppt>
+width=-1
+height=-1
+background=#FFFFC935
+layout_margintop=0dp
+layout_marginleft=0dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>
+width=-1
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="6" did="5" type="RoundImageView">
+<ppt>
+width=60dp
+height=60dp
+src=@c.jpg
+layout_marginTop=-30dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="7" did="5" type="TextView">
+<ppt>
+width=-2
+height=-2
+text=
+textStyle=bold
+textColor=#FF23221E
+</ppt>
+<event>
+</event>
+</View>
+<View id="8" did="5" type="LinearLayout">
+<ppt>
+width=-1
+height=-2
+layout_marginLeft=20dp
+layout_marginRight=20dp
+layout_marginTop=45dp
+orientation=vertical
+gravity=center
+</ppt>
+<event>
+</event>
+</View>
+<View id="10" did="8" type="CardView">
+<ppt>
+width=-1
+height=-2
+app_CardcornerRadius=50dp
+app_CardElevation=0dp
+app_CardprEventcornerOverlap=false
+app_CardusecompatPadding=false
+layout_marginLeft=30dp
+layout_marginRight=30dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="9" did="10" type="EditText">
+<ppt>
+width=-1
+height=50dp
+text=
+textSize=18sp
+textStyle=bold
+textColor=#FF000000
+textColorHint=#FF9B9FA3
+gravity=center
+background=null
+paddingLeft=10dp
+hint=输入666直接进入
+singleLine=true
+inputType=textpassword
+textCursorDrawable=#ff4adfce
+</ppt>
+<event>
+</event>
+</View>
+<View id="13" did="8" type="CardView">
+<ppt>
+width=-2
+height=-2
+app_CardcornerRadius=50dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#FF23221E
+layout_marginTop=20dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="12" did="13" type="TextView">
+<ppt>
+width=160dp
+height=50dp
+text=激活
+textColor=#FFFFC935
+textSize=20sp
+gravity=center
+</ppt>
+<event>
+<eventItme type="clicki">
+ug(9,"text",psw)
+f(psw==666)
+{
+fw(".pw",666)
+tw("登录成功\n到期时间：1970-01-01 00:00:00")
+uigo("mian1.iyu")
+end()
+}
+else
+{
+tw("卡密不存在")
+}
+</eventItme>
+</event>
+</View>
+<View id="14" did="8" type="CardView">
+<ppt>
+width=-2
+height=-2
+app_CardcornerRadius=50dp
+app_CardElevation=0dp
+app_CardBackgroundColor=#FF23221E
+layout_marginTop=13dp
+</ppt>
+<event>
+</event>
+</View>
+<View id="16" did="14" type="Button">
+<ppt>
+width=160dp
+height=50dp
+text=解绑
+textColor=#FFFFC935
+textSize=20sp
+gravity=center
+background=through
+</ppt>
+<event>
+<eventItme type="clicki">
+tw("你解绑个寂寞啊")
+</eventItme>
+</event>
+</View>
+<UIEventset>
+<eventItme type="sensor">
+time(3,a)
+us(5,"text",a)
+</eventItme>
+<eventItme type="loading">
+java(xsg,null,"android.provider.Settings.canDrawOverlays","android.content.Context",activity)
+f(xsg==false)
+{
+sit(a, "action", "android.intent.action.VIEW")
+sit(a, "action", "android.settings.action.MANAGE_OVERLAY_PERMISSION")
+cls("android.content.ContextWrapper",类)
+javax(one,activity,类,"getPackageName")
+ss("package:"+one,pk)
+sit(a, "data", pk)
+uit(a, "chooser", "设置悬浮窗权限")
+}
+else
+{
+}
+tw("请先设置悬浮窗权限")
+javax(run,null,"java.lang.Runtime","getRuntime")
+javax(null,run,"java.lang.Runtime","exec","String","su")
+ushsp(false)
+uycl("#ffcc11",false)
+fr(".pw",ps)
+f(ps==null)
+{
+endcode
+}
+us(9,"text",ps)
+fn alms.动态提示(4,"@test02.png","By.羽霖咲华Unishua")
+}
+}
+t()
+{
+s app="false"
+uapplist(false, lb)
+for(rj;lb)
+{
+sl(rj,"\n",true,bm1)
+sgsz(bm1,0,bm)
+f(bm=="com.unizone.egaoqzh")
+{
+s app="true"
+break
+}
+}
+f(app=="false")
+{
+ufnsui()
+{
+s iyu ="qzhtc.iyu"
+s bln ="true"
+javanew(ss.utwv,"androidx.appcompat.app.AppCompatDialog","Context",activity)
+nvw(111,989,"相对布局","width=-1\nheight=-1",ss.载体)
+addv(ss.载体,iyu)
+java(null,ss.utwv,"android.app.Dialog.setContentView","android.view.View",ss.载体)
+java(hq,ss.utwv,"android.app.Dialog.getWindow")
+java(null,hq,"android.view.Window.setBackgroundDrawableResource","int",17170445)
+java(null,ss.utwv,"android.app.Dialog.setCancelable","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setCanceledOnTouchOutside","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setOnDismissListener",".android.content.DialogInterface$OnDismissListener",null)
+{
+}
+java(null,ss.utwv,"android.app.Dialog.show")
+}
+}
+else
+{
+ufnsui()
+{
+}
+}
+}
+</eventItme>
+</UIEventset>
+��kՄWl�g)lW�
