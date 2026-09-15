@@ -247,7 +247,7 @@ Telegram、X、TikTok、YouTube、Instagram、Facebook、ChatGPT、BBC 中文、
 
 ---
 
-## A6、反调试与脱壳技术备忘
+## A6、反调试与脱壳技术
 
 - **frida 17 API 变化**：`Module.findExportByName` 移除 → 用 `Process.getModuleByName('libc.so').findExportByName(name)`；不自动注入 Java bridge。
 - **盈安壳反调试**：扫 `/proc/maps` 找 "frida" + grep `/data/tombstones` + jdwp/JVMTI 检测 + arm64 内联 svc 自杀（libc hook 拦不住 svc）。
